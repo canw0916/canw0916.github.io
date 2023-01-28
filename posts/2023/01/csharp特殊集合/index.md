@@ -1,7 +1,7 @@
 # C#基础提升系列——C#特殊集合
 
 
-# C# 特殊集合
+## C# 特殊集合
 
 C#中的特殊集合主要有：
 
@@ -10,7 +10,7 @@ C#中的特殊集合主要有：
 - 位数组合位矢量
 - 可观察的集合
 
-## 不变的集合
+### 不变的集合
 
 如果对象可以改变其状态，就很难在多个同时运行的任务中使用。这些集合必须同步。如果对象不能改变其状态，就很容易在多个线程中使用。不能改变的对象称为不变的对象；不能改变的集合称为不变的集合。
 
@@ -128,7 +128,7 @@ immutableAccounts.ForEach(a => Console.WriteLine(a.Name + "--" + a.Amount));
 
 上述的这些不变的集合都实现了对应的接口，与正常集合相比，这些不变接口的最大区别是所有改变集合的方法都返回一个新的集合。
 
-## 并发集合
+### 并发集合
 
 在命名空间[`System.Collections.Concurrent`](https://docs.microsoft.com/zh-cn/dotnet/api/system.collections.concurrent?view=netframework-4.7.2) 中，提供了几个线程安全的集合类，线程安全的集合可以防止多个线程以相互冲突的方式访问集合。下面列出了System.Collections.Concurrent命名空间中常用的类及其功能。
 
@@ -363,7 +363,7 @@ public static async Task StartPipelineAsync()
 }
 ```
 
-## 处理位的集合
+### 处理位的集合
 
 如果需要处理的数字有许多位，可以使用 `BitArray`类和`BitVector32`结构。这两种类型最重要的区别是：`BitArray`类可以重新设置大小，如果事先不知道需要的位数，可以使用`BitArray`类，它可以包含非常多的位。`BitVector32`结构是基于栈的，因此比较快。`BitVector32`结构仅包含32位，它们存储在一个整数中。
 
@@ -517,7 +517,7 @@ public static string IntToBinaryString(int bits, bool removeTrailingZero)
 }
 ```
 
-## 可观察的集合
+### 可观察的集合
 
 使用[`ObservableCollection`](https://docs.microsoft.com/zh-cn/dotnet/api/system.collections.objectmodel.observablecollection-1?view=netframework-4.7.2) 集合类，可以在集合元素进行添加、删除、移动、修改等操作时，提供通知信息。它可以触发[`CollectionChanged`](https://docs.microsoft.com/zh-cn/dotnet/api/system.collections.objectmodel.observablecollection-1.collectionchanged?view=netframework-4.7.2) 事件，可以在该事件中，进行相关的操作。
 
