@@ -5,24 +5,21 @@
 
 1.首先切换到项目的根目录，查看项目原有的remote。
 
-```undefined
+```bash
 git remote -v
 ```
 
 2.接下来就是接触与原来远程仓库的关联。
 
-```undefined
+```bash
 git remote rm “remote名称”
 ```
 
 3.取消git初始化。
 
-```css
+```bash
 rm -rf .git
 ```
-
-
-
 
 
 ---
