@@ -6,14 +6,14 @@
     <description>Recent content in 🧱 建站 on Felix&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 05 May 2022 00:18:23 +0800</lastBuildDate><atom:link href="https://canw0916.github.io/posts/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 09 Feb 2023 00:18:23 +0800</lastBuildDate><atom:link href="https://canw0916.github.io/posts/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>博客主题</title>
-      <link>https://canw0916.github.io/posts/blog/blog/</link>
-      <pubDate>Thu, 05 May 2022 00:18:23 +0800</pubDate>
+      <title>PaperMod主题美化</title>
+      <link>https://canw0916.github.io/posts/blog/papermod%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/</link>
+      <pubDate>Thu, 09 Feb 2023 00:18:23 +0800</pubDate>
       
-      <guid>https://canw0916.github.io/posts/blog/blog/</guid>
-      <description>博客使用了由 Sulv 魔改的PaperMod主题,详细的配置方法可见 :Sulv&amp;rsquo;s Blog</description>
+      <guid>https://canw0916.github.io/posts/blog/papermod%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/</guid>
+      <description>添加mac风格代码块等等</description>
     </item>
     
   </channel>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>👨🏻‍💻 技术 on Felix&#39;s Blog</title>
-    <link>https://canw0916.github.io/posts/tech/</link>
-    <description>Recent content in 👨🏻‍💻 技术 on Felix&#39;s Blog</description>
+    <title>python on Felix&#39;s Blog</title>
+    <link>https://canw0916.github.io/tags/python/</link>
+    <description>Recent content in python on Felix&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 09 Feb 2023 15:34:59 +0800</lastBuildDate><atom:link href="https://canw0916.github.io/posts/tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 09 Feb 2023 15:34:59 +0800</lastBuildDate><atom:link href="https://canw0916.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>基本数据类型</title>
       <link>https://canw0916.github.io/posts/tech/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>

@@ -2,32 +2,47 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://canw0916.github.io/posts/</loc>
-    <lastmod>2022-05-05T00:18:23+08:00</lastmod>
+    <loc>https://canw0916.github.io/posts/tech/</loc>
+    <lastmod>2023-02-09T15:34:59+08:00</lastmod>
   </url><url>
-    <loc>https://canw0916.github.io/categories/blog/</loc>
-    <lastmod>2022-05-05T00:18:23+08:00</lastmod>
+    <loc>https://canw0916.github.io/posts/</loc>
+    <lastmod>2023-02-09T15:34:59+08:00</lastmod>
   </url><url>
     <loc>https://canw0916.github.io/categories/</loc>
-    <lastmod>2022-05-05T00:18:23+08:00</lastmod>
+    <lastmod>2023-02-09T15:34:59+08:00</lastmod>
   </url><url>
     <loc>https://canw0916.github.io/</loc>
-    <lastmod>2022-05-05T00:18:23+08:00</lastmod>
+    <lastmod>2023-02-09T15:34:59+08:00</lastmod>
   </url><url>
-    <loc>https://canw0916.github.io/tags/hugo/</loc>
-    <lastmod>2022-05-05T00:18:23+08:00</lastmod>
+    <loc>https://canw0916.github.io/tags/python/</loc>
+    <lastmod>2023-02-09T15:34:59+08:00</lastmod>
   </url><url>
-    <loc>https://canw0916.github.io/posts/blog/blog/</loc>
-    <lastmod>2022-05-05T00:18:23+08:00</lastmod>
+    <loc>https://canw0916.github.io/categories/tech/</loc>
+    <lastmod>2023-02-09T15:34:59+08:00</lastmod>
   </url><url>
-    <loc>https://canw0916.github.io/tags/%E5%BB%BA%E7%AB%99/</loc>
-    <lastmod>2022-05-05T00:18:23+08:00</lastmod>
+    <loc>https://canw0916.github.io/posts/tech/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</loc>
+    <lastmod>2023-02-09T15:34:59+08:00</lastmod>
   </url><url>
     <loc>https://canw0916.github.io/tags/</loc>
-    <lastmod>2022-05-05T00:18:23+08:00</lastmod>
+    <lastmod>2023-02-09T15:34:59+08:00</lastmod>
+  </url><url>
+    <loc>https://canw0916.github.io/posts/tech/%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/</loc>
+    <lastmod>2023-02-09T15:16:26+08:00</lastmod>
+  </url><url>
+    <loc>https://canw0916.github.io/posts/tech/python%E7%9A%84%E5%8F%98%E9%87%8F%E5%92%8C%E5%B8%B8%E9%87%8F/</loc>
+    <lastmod>2023-02-09T13:30:21+08:00</lastmod>
+  </url><url>
+    <loc>https://canw0916.github.io/categories/blog/</loc>
+    <lastmod>2023-02-09T00:18:23+08:00</lastmod>
+  </url><url>
+    <loc>https://canw0916.github.io/tags/hugo/</loc>
+    <lastmod>2023-02-09T00:18:23+08:00</lastmod>
+  </url><url>
+    <loc>https://canw0916.github.io/posts/blog/papermod%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/</loc>
+    <lastmod>2023-02-09T00:18:23+08:00</lastmod>
   </url><url>
     <loc>https://canw0916.github.io/posts/blog/</loc>
-    <lastmod>2022-05-05T00:18:23+08:00</lastmod>
+    <lastmod>2023-02-09T00:18:23+08:00</lastmod>
   </url><url>
     <loc>https://canw0916.github.io/tags/life/</loc>
     <lastmod>2022-05-05T00:18:15+08:00</lastmod>
@@ -35,7 +50,7 @@
     <loc>https://canw0916.github.io/categories/life/</loc>
     <lastmod>2022-05-05T00:18:15+08:00</lastmod>
   </url><url>
-    <loc>https://canw0916.github.io/posts/life/life/</loc>
+    <loc>https://canw0916.github.io/posts/life/%E5%90%8D%E4%BA%BA%E5%90%8D%E8%A8%80/</loc>
     <lastmod>2022-05-05T00:18:15+08:00</lastmod>
   </url><url>
     <loc>https://canw0916.github.io/posts/life/</loc>
@@ -50,20 +65,8 @@
     <loc>https://canw0916.github.io/tags/%E4%B8%89%E4%BD%93/</loc>
     <lastmod>2022-05-05T00:18:06+08:00</lastmod>
   </url><url>
-    <loc>https://canw0916.github.io/posts/read/read/</loc>
+    <loc>https://canw0916.github.io/posts/read/%E4%B8%89%E4%BD%93/</loc>
     <lastmod>2022-05-05T00:18:06+08:00</lastmod>
-  </url><url>
-    <loc>https://canw0916.github.io/tags/%E7%94%B5%E8%A7%86%E5%89%A7/</loc>
-    <lastmod>2022-05-05T00:18:06+08:00</lastmod>
-  </url><url>
-    <loc>https://canw0916.github.io/posts/tech/</loc>
-    <lastmod>2022-05-05T00:17:58+08:00</lastmod>
-  </url><url>
-    <loc>https://canw0916.github.io/tags/tech/</loc>
-    <lastmod>2022-05-05T00:17:58+08:00</lastmod>
-  </url><url>
-    <loc>https://canw0916.github.io/posts/tech/tech/</loc>
-    <lastmod>2022-05-05T00:17:58+08:00</lastmod>
   </url><url>
     <loc>https://canw0916.github.io/links/</loc>
     <lastmod>2021-11-06T15:15:53+08:00</lastmod>
