@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>HTML on Felix&#39;s Blog</title>
+    <link>https://canw0916.github.io/tags/html/</link>
+    <description>Recent content in HTML on Felix&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 10 Feb 2023 13:41:15 +0800</lastBuildDate><atom:link href="https://canw0916.github.io/tags/html/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>前端基础</title>
+      <link>https://canw0916.github.io/posts/tech/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Fri, 10 Feb 2023 13:41:15 +0800</pubDate>
+      
+      <guid>https://canw0916.github.io/posts/tech/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/</guid>
+      <description>强调：前端所有的内容是作为了解，不需要自己能够写出来！ 目的：大致看懂网页的页面源码 第1章 、Web的基本概念 软件开发的架构 目前我们了解常见应用</description>
+    </item>
+    
+  </channel>
+</rss>
