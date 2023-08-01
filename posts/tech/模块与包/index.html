@@ -1,274 +1,941 @@
-<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>模块与包 | Felix's Blog</title><meta name=keywords content><meta name=description content="模块与包 模块 模块介绍 在计算机程序的开发过程中，随着程序代码越写越多，在一个文件里代码就会越来越长，越来越不容易维护。 为了编写可维护的代码，我"><meta name=author content="
-👦&nbsp;Felix"><link rel=canonical href=https://canw0916.github.io/posts/tech/%E6%A8%A1%E5%9D%97%E4%B8%8E%E5%8C%85/><link crossorigin=anonymous href=/assets/css/stylesheet.b93dd213ece484c2198b1b6b8cb8d2248f9f93dda4c99f628a97f7e932ee21f8.css integrity="sha256-uT3SE+zkhMIZixtrjLjSJI+fk92kyZ9iipf36TLuIfg=" rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG+9vmJ0cTS+ovo0FeA=" onload=hljs.initHighlightingOnLoad()></script>
-<link rel=icon href=https://canw0916.github.io/img/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://canw0916.github.io/img/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://canw0916.github.io/img/favicon-32x32.png><link rel=apple-touch-icon href=https://canw0916.github.io/img/apple-touch-icon.png><link rel=mask-icon href=https://canw0916.github.io/img/android-chrome-512x512.png><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><noscript><style>#theme-toggle,.top-link{display:none}</style></noscript><script>var _hmt=_hmt||[];(function(){var e,t=document.createElement("script");t.src="",e=document.getElementsByTagName("script")[0],e.parentNode.insertBefore(t,e)})()</script><script async src="https://www.googletagmanager.com/gtag/js?id=G-7ENSZ7BS0C"></script>
-<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-7ENSZ7BS0C",{anonymize_ip:!1})}</script><meta property="og:title" content="模块与包"><meta property="og:description" content="模块与包 模块 模块介绍 在计算机程序的开发过程中，随着程序代码越写越多，在一个文件里代码就会越来越长，越来越不容易维护。 为了编写可维护的代码，我"><meta property="og:type" content="article"><meta property="og:url" content="https://canw0916.github.io/posts/tech/%E6%A8%A1%E5%9D%97%E4%B8%8E%E5%8C%85/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2023-02-10T11:06:06+08:00"><meta property="article:modified_time" content="2023-02-10T11:06:06+08:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="模块与包"><meta name=twitter:description content="模块与包 模块 模块介绍 在计算机程序的开发过程中，随着程序代码越写越多，在一个文件里代码就会越来越长，越来越不容易维护。 为了编写可维护的代码，我"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"📚文章","item":"https://canw0916.github.io/posts/"},{"@type":"ListItem","position":2,"name":"👨🏻‍💻 技术","item":"https://canw0916.github.io/posts/tech/"},{"@type":"ListItem","position":3,"name":"模块与包","item":"https://canw0916.github.io/posts/tech/%E6%A8%A1%E5%9D%97%E4%B8%8E%E5%8C%85/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"模块与包","name":"模块与包","description":"模块与包 模块 模块介绍 在计算机程序的开发过程中，随着程序代码越写越多，在一个文件里代码就会越来越长，越来越不容易维护。 为了编写可维护的代码，我","keywords":[""],"articleBody":"模块与包 模块 模块介绍 在计算机程序的开发过程中，随着程序代码越写越多，在一个文件里代码就会越来越长，越来越不容易维护。\n为了编写可维护的代码，我们把很多函数分组，分别放到不同的文件里，这样，每个文件包含的代码就相对较少，很多编程语言都采用这种组织代码的方式。而这样的一个py文件在Python中称为模块（Module）。\n模块是组织代码的更高级形式，大大提高了代码的阅读性和可维护性。\n模块一共四种：\n解释器内建模块 python标准库 第三方模块 应用程序自定义模块 另外，使用模块还可以避免函数名和变量名冲突。相同名字的函数和变量完全可以分别存在不同的模块中，因此，我们自己在编写模块时，不必考虑名字会与其他模块冲突。\n模块导入 ''' # 方式1：导入一个模块 import 模块名 import 模块名 as 别名 # 方式2：导入多个模块 import ( 模块1 模块2 ) import 模块1,模块2 # 方式3：导入成员变量 from 模块名 import 成员变量 from 模块名 import * ''' 导入模块时会执行模块，多次导入只执行一次。\n案例：\ncal.py logger.py main.py #cal.py def add(x,y): return x + y def mul(x,y): return x * y print('这是cal模块文件') #logger.py def get_logger(): print('打印日志！') print('这是logger模块文件') #main.py import cal #导入了cal模块 import logger #导入和logger模块 #注意：import导入模块，就好比是将模块中的代码执行了 from cal import mul #将cal模块中的mul成员进行导入 #调用用了cal模块中的add函数 result = cal.add(1,2) print(result) c = mul(3,4) print(c) #调用了logger模块中的get_logger函数 logger.get_logger() 注意：执行源文件的名字一定不要和模块的名字同名 __name__ __name__是python内置变量，存储的是当前模块名称。\n对于很多编程语言来说，程序都必须要有一个入口。像C，C++都有一个main函数作为程序的入口，而Python作为解释性脚本语言，没有一个统一的入口，因为Python程序运行时是从模块顶行开始，逐行进行翻译执行，所以，最顶层（没有被缩进）的代码都会被执行，所以Python中并不需要一个统一的main()作为程序的入口。\n在刚才的案例中三个模块都打印一次__name__\n#cal.py def add(x,y): return x + y def mul(x,y): return x * y print('这是cal模块文件,__name__内置变量的值为：',__name__) #logger.py def get_logger(): print('打印日志！') print('这是logger模块文件,__name__内置变量的值为：',__name__) #main.py：作为执行文件 import cal #导入了cal模块 import logger #导入和logger模块 print('main文件的__name__这个内置变量为：',__name__) 结果为：\n这是cal模块文件,__name__内置变量的值为： cal 这是logger模块文件,__name__内置变量的值为： logger main文件的__name__这个内置变量为： __main__ 通过结果发现__name__只有在执行模块中打印__main__,在其他导入模块中打印各自模块的名称。\n所以，__name__可以有以下作用：\n利用__name__==\"__main__\"声明程序入口。 可以对导入的模块进行功能测试 包 什么是包 当一个项目中模块越来越多，维护和开发不是那么高效的时候，我们可以引入一种比模块更高级语法：包。\n包是对相关功能的模块py文件的组织方式。\n包可以理解为文件夹，更确切的说，是一个包含__init__文件的文件夹。\n导入包的语法 import 包名[.模块名 [as 别名]] from 包名 import 模块名 [as 别名] from 包名.模块名 import 成员名 [as 别名] 案例：将上面案例中的cal .py文件放到utils包中管理，logger.py放到logger包中管理。\n-- demo main.py #执行文件 -- m_log #包 __init__.py logger.py #存储在logger包中的一个模块 from m_log import logger logger.get_logger() #调用了logger模块中的get_logger函数 常见模块 time模块 # \u003c1\u003e 时间戳 \u003e\u003e\u003e import time \u003e\u003e\u003e time.time() 1493136727.099066 # \u003c2\u003e 时间字符串 \u003e\u003e\u003e time.strftime(\"%Y-%m-%d %X\") #%Y:年 %m：月 %d：天 %X:时分秒 '2017-04-26 00:32:18' #\u003c3\u003e 程序暂定固定的时间 import time print('正在下载数据......') time.sleep(2) #程序暂定n秒 print('下载成功！') 小结：时间戳是计算机能够识别的时间；时间字符串是人能够看懂的时间；元组则是用来操作时间的\nimport time #计算一组程序执行的耗时 start = time.time() #测试代码 num = 0 for i in range(10000000): num += 1 print(num) ############################## print('总耗时：',time.time()-start) random模块 \u003e\u003e\u003e import random \u003e\u003e\u003e random.random() # 大于0且小于1之间的小数 0.7664338663654585 \u003e\u003e\u003e random.randint(1,5) # 大于等于1且小于等于5之间的整数 2 \u003e\u003e\u003e random.randrange(1,3) # 大于等于1且小于3之间的整数 1 \u003e\u003e\u003e random.choice([1,'23',[4,5]]) # 返回列表中的随机一个元素 1 \u003e\u003e\u003e random.sample([1,'23',[4,5]],2) # 列表元素任意2个随机组合 [[4, 5], '23'] \u003e\u003e\u003e random.uniform(1,3) #大于1小于3的小数 1.6270147180533838 \u003e\u003e\u003e item=[1,3,5,7,9] \u003e\u003e\u003e random.shuffle(item) # 直接将原来的列表元素打乱次序，不会返回一个新列表 \u003e\u003e\u003e item [5, 1, 3, 7, 9] os模块 os模块是与操作系统交互的一个接口\nimport os os.getcwd() # 获取当前工作目录，即当前python脚本工作的目录路径 os.chdir(\"dirname\") # 改变当前脚本工作目录；相当于shell下cd os.curdir # 返回当前目录: ('.') os.pardir # 获取当前目录的父目录字符串名：('..') os.makedirs('dirname1/dirname2') # ***可生成多层递归目录 os.removedirs('dirname1') # ***若目录为空，则删除，并递归到上一级目录，如若也为空，则删除，依此类推 os.mkdir('dirname') #*** 生成单级目录；相当于shell中mkdir dirname os.rmdir('dirname') # *** 删除单级空目录，若目录不为空则无法删除，报错；相当于shell中rmdir dirname os.listdir('dirname') # ***列出指定目录下的所有文件和子目录，包括隐藏文件，并以列表方式打印 os.remove() #*** 删除一个文件 os.rename(\"oldname\",\"newname\") #*** 重命名文件/目录 os.stat('path/filename') # 获取文件/目录信息 os.sep # 输出操作系统特定的路径分隔符，win下为\"\\\\\",Linux下为\"/\" os.linesep # 输出当前平台使用的行终止符，win下为\"\\t\\n\",Linux下为\"\\n\" os.pathsep # 输出用于分割文件路径的字符串 win下为;,Linux下为: os.name # 输出字符串指示当前使用平台。win-\u003e'nt'; Linux-\u003e'posix' os.system(\"bash command\") # 运行shell命令，直接显示 os.environ # 获取系统环境变量 os.path.abspath(path) # ***返回path规范化的绝对路径 os.path.split(path) # 将path分割成目录和文件名二元组返回 os.path.dirname(path) # 返回path的目录。其实就是os.path.split(path)的第一个元素 os.path.basename(path) # 返回path最后的文件名。如何path以／或\\结尾，那么就会返回空值。即os.path.split(path)的第二个元素 os.path.exists(path) # ***如果path存在，返回True；如果path不存在，返回False os.path.isabs(path) # 如果path是绝对路径，返回True os.path.isfile(path) # ***如果path是一个存在的文件，返回True。否则返回False os.path.isdir(path) # ***如果path是一个存在的目录，则返回True。否则返回False os.path.join(path1[, path2[, ...]]) # 将多个路径组合后返回，第一个绝对路径之前的参数将被忽略 os.path.getatime(path) # 返回path所指向的文件或者目录的最后访问时间 os.path.getmtime(path) # 返回path所指向的文件或者目录的最后修改时间 os.path.getsize(path) # ***返回path的大小 序列化模块：json（重点） 序列化： 将python中的字典，列表对象转换成指定形式字符串\n反序列化：将指定格式的字符串转换成字典，列表对象\n基本使用\nimport json dic = { 'hobby':['football','pingpang','smoke'], 'age':20, 'score':97.6, 'name':'zhangsan' } #序列化：将字典对象转换成了json格式的字符串 r = json.dumps(dic) print(r) import json str = '{\"hobby\": [\"football\", \"pingpang\", \"smoke\"], \"age\": 20, \"score\": 97.6, \"name\": \"zhangsan\"}' #反序列化：将字符串转换成了字典对象 dic = json.loads(str) print(dic) #持久化存储字典 import json dic = { 'hobby':['football','pingpang','smoke'], 'age':20, 'score':97.6, 'name':'zhangsan' } fp = open('./dic.json','a') #dump首先将dic字典进行序列化，然后将序列化后的结果写入到了fp表示的文件中 json.dump(dic,fp) fp.close() import json fp = open('./dic.json','r') #load将文件中的字符串数据进行读取，且将其转换成字典类型 dic = json.load(fp) print(dic) fp.close() 正则模块（重点） 什么是正则表达式？\n正则表达式(Regular Expression)是一种文本模式，包括普通字符（例如，a 到 z 之间的字母）和特殊字符（例如，*，+，？等）。 正则表达式使用单个字符串来描述、匹配一系列匹配某个句法规则的字符串。 常用的正则标识\n单字符： . : 除换行以外所有字符 [] ：[aoe] [a-w] 匹配集合中任意一个字符 \\d ：数字 [0-9] 数量修饰： * : 任意多次 \u003e=0 + : 至少1次 \u003e=1 ? : 可有可无 0次或者1次 {m} ：固定m次 hello{3,} {m,} ：至少m次 {m,n} ：m-n次 边界： $ : 以某某结尾 ^ : 以某某开头 分组： (ab) 命名分组： (?P正则表达式)，name是一个合法的标识符 贪婪模式： .* 非贪婪（惰性）模式： .*? 正则在python中的使用\n基于re模块进行正则匹配操作\n主要使用re模块中的findall进行指定规则的匹配\nfindall(str,rule) str表示即将进行匹配的原始字符串数据 rule表示指定规则的正则表达式 findall返回的是列表，列表中存储匹配到的指定内容 练习\nimport re #提取170 string = '我喜欢身高为170的女孩' ex = '\\d+' result = re.findall(ex,string) print(result[0]) ##################################################################### #提取出http和https key='http://www.baidu.com and https://boob.com' ex = 'https?' result = re.findall(ex,key) print(result) ##################################################################### import re #提取出hello key='lalalahellohahah' ex = '(.*)' result = re.findall(ex,key) print(result) ##################################################################### #提取出hit. key='bobo@hit.edu.com'#想要匹配到hit. # ex = 'h.*\\.' #贪婪模式 ex = 'h.*?\\.' #？将正则的贪婪模式调整为非贪婪模式。默认下为贪婪模式 result = re.findall(ex,key) print(result) ##################################################################### #匹配sas和saas key='saas and sas and saaas' ex = 'sa{1,2}s' result = re.findall(ex,key) print(result) ##################################################################### key = '你好我的手机号是13222222222你记住了吗' ex = '1[3,5,7,8,9]\\d{9}' result = re.findall(ex,key) print(result) ##################################################################### #提取ip和端口号 import re s = \"my computer ip is '230.192.168.78',and port is 8889 you got it?\" rep = re.search(r\"ip is '(?P\\d+\\.\\d+\\.\\d+\\.\\d+).* port is (?P\\d+)\",s) rep.group('ip'),rep.group('port')#通过命名分组引用分组 ","wordCount":"3841","inLanguage":"en","datePublished":"2023-02-10T11:06:06+08:00","dateModified":"2023-02-10T11:06:06+08:00","author":[{"@type":"Person","name":"Felix"}],"mainEntityOfPage":{"@type":"WebPage","@id":"https://canw0916.github.io/posts/tech/%E6%A8%A1%E5%9D%97%E4%B8%8E%E5%8C%85/"},"publisher":{"@type":"Organization","name":"Felix's Blog","logo":{"@type":"ImageObject","url":"https://canw0916.github.io/img/favicon.ico"}}}</script></head><body class=dark id=top><script>localStorage.getItem("pref-theme")==="light"&&document.body.classList.remove("dark")</script><script async src=https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js></script><header class=header><nav class=nav><div class=logo><a href=https://canw0916.github.io/ accesskey=h title="Felix's Blog (Alt + H)"><img src=https://canw0916.github.io/img/android-chrome-512x512.png alt=logo aria-label=logo height=35>Felix's Blog</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://canw0916.github.io/search title="🔍 搜索 (Alt + /)" accesskey=/><span>🔍 搜索</span></a></li><li><a href=https://canw0916.github.io/ title="🏠 主页"><span>🏠 主页</span></a></li><li><a href=https://canw0916.github.io/posts title="📚 文章"><span>📚 文章</span></a></li><li><a href=https://canw0916.github.io/tags title="🧩 标签"><span>🧩 标签</span></a></li><li><a href=https://canw0916.github.io/archives/ title="⏱️ 时间轴"><span>⏱️ 时间轴</span></a></li><li><a href=https://canw0916.github.io/about title="🙋🏻‍♂️ 关于"><span>🙋🏻‍♂️ 关于</span></a></li><li><a href=https://canw0916.github.io/links title="🤝 友链"><span>🤝 友链</span></a></li></ul></nav></header><main class="main page"><article class=post-single><div id=single-content><header class=post-header><div class=breadcrumbs><a href=https://canw0916.github.io/>🏠主页</a>&nbsp;»&nbsp;<a href=https://canw0916.github.io/posts/>📚文章</a>&nbsp;»&nbsp;<a href=https://canw0916.github.io/posts/tech/>👨🏻‍💻 技术</a></div><h1 class=post-title>模块与包</h1><div class=post-meta>📅&nbsp;<span title='2023-02-10 11:06:06 +0800 +0800'>2023-02-10</span>&nbsp;&nbsp;📄&nbsp;3841字&nbsp;&nbsp;⏳&nbsp;8分钟&nbsp;&nbsp;
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>模块与包 | Felix&#39;s Blog</title>
+<meta name="keywords" content="">
+<meta name="description" content="模块与包 模块 模块介绍 在计算机程序的开发过程中，随着程序代码越写越多，在一个文件里代码就会越来越长，越来越不容易维护。 为了编写可维护的代码，我">
+<meta name="author" content="
+👦&nbsp;Felix">
+<link rel="canonical" href="https://canw0916.github.io/posts/tech/%E6%A8%A1%E5%9D%97%E4%B8%8E%E5%8C%85/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.385ef2cb324b568b659794c1a73b291fec4fd0ba742a7b8d0bbb63b3d3aa1abe.css" integrity="sha256-OF7yyzJLVotll5TBpzspH&#43;xP0Lp0KnuNC7tjs9OqGr4=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
+        onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://canw0916.github.io/img/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://canw0916.github.io/img/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://canw0916.github.io/img/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://canw0916.github.io/img/apple-touch-icon.png">
+<link rel="mask-icon" href="https://canw0916.github.io/img/android-chrome-512x512.png">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = ""; 
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7ENSZ7BS0C"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-7ENSZ7BS0C', { 'anonymize_ip': false });
+}
+</script>
+<meta property="og:title" content="模块与包" />
+<meta property="og:description" content="模块与包 模块 模块介绍 在计算机程序的开发过程中，随着程序代码越写越多，在一个文件里代码就会越来越长，越来越不容易维护。 为了编写可维护的代码，我" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://canw0916.github.io/posts/tech/%E6%A8%A1%E5%9D%97%E4%B8%8E%E5%8C%85/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-02-10T11:06:06+08:00" />
+<meta property="article:modified_time" content="2023-02-10T11:06:06+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="模块与包"/>
+<meta name="twitter:description" content="模块与包 模块 模块介绍 在计算机程序的开发过程中，随着程序代码越写越多，在一个文件里代码就会越来越长，越来越不容易维护。 为了编写可维护的代码，我"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+
+        {
+          "@type": "ListItem",
+          "position":  1 ,
+          "name": "📚文章",
+          "item": "https://canw0916.github.io/posts/"
+        },
+
+        {
+          "@type": "ListItem",
+          "position":  2 ,
+          "name": "👨🏻‍💻 技术",
+          "item": "https://canw0916.github.io/posts/tech/"
+        }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "模块与包",
+      "item": "https://canw0916.github.io/posts/tech/%E6%A8%A1%E5%9D%97%E4%B8%8E%E5%8C%85/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "模块与包",
+  "name": "模块与包",
+  "description": "模块与包 模块 模块介绍 在计算机程序的开发过程中，随着程序代码越写越多，在一个文件里代码就会越来越长，越来越不容易维护。 为了编写可维护的代码，我",
+  "keywords": [
+    ""
+  ],
+  "articleBody": "模块与包 模块 模块介绍 在计算机程序的开发过程中，随着程序代码越写越多，在一个文件里代码就会越来越长，越来越不容易维护。\n为了编写可维护的代码，我们把很多函数分组，分别放到不同的文件里，这样，每个文件包含的代码就相对较少，很多编程语言都采用这种组织代码的方式。而这样的一个py文件在Python中称为模块（Module）。\n模块是组织代码的更高级形式，大大提高了代码的阅读性和可维护性。\n模块一共四种：\n解释器内建模块 python标准库 第三方模块 应用程序自定义模块 另外，使用模块还可以避免函数名和变量名冲突。相同名字的函数和变量完全可以分别存在不同的模块中，因此，我们自己在编写模块时，不必考虑名字会与其他模块冲突。\n模块导入 ''' # 方式1：导入一个模块 import 模块名 import 模块名 as 别名 # 方式2：导入多个模块 import ( 模块1 模块2 ) import 模块1,模块2 # 方式3：导入成员变量 from 模块名 import 成员变量 from 模块名 import * ''' 导入模块时会执行模块，多次导入只执行一次。\n案例：\ncal.py logger.py main.py #cal.py def add(x,y): return x + y def mul(x,y): return x * y print('这是cal模块文件') #logger.py def get_logger(): print('打印日志！') print('这是logger模块文件') #main.py import cal #导入了cal模块 import logger #导入和logger模块 #注意：import导入模块，就好比是将模块中的代码执行了 from cal import mul #将cal模块中的mul成员进行导入 #调用用了cal模块中的add函数 result = cal.add(1,2) print(result) c = mul(3,4) print(c) #调用了logger模块中的get_logger函数 logger.get_logger() 注意：执行源文件的名字一定不要和模块的名字同名 __name__ __name__是python内置变量，存储的是当前模块名称。\n对于很多编程语言来说，程序都必须要有一个入口。像C，C++都有一个main函数作为程序的入口，而Python作为解释性脚本语言，没有一个统一的入口，因为Python程序运行时是从模块顶行开始，逐行进行翻译执行，所以，最顶层（没有被缩进）的代码都会被执行，所以Python中并不需要一个统一的main()作为程序的入口。\n在刚才的案例中三个模块都打印一次__name__\n#cal.py def add(x,y): return x + y def mul(x,y): return x * y print('这是cal模块文件,__name__内置变量的值为：',__name__) #logger.py def get_logger(): print('打印日志！') print('这是logger模块文件,__name__内置变量的值为：',__name__) #main.py：作为执行文件 import cal #导入了cal模块 import logger #导入和logger模块 print('main文件的__name__这个内置变量为：',__name__) 结果为：\n这是cal模块文件,__name__内置变量的值为： cal 这是logger模块文件,__name__内置变量的值为： logger main文件的__name__这个内置变量为： __main__ 通过结果发现__name__只有在执行模块中打印__main__,在其他导入模块中打印各自模块的名称。\n所以，__name__可以有以下作用：\n利用__name__==\"__main__\"声明程序入口。 可以对导入的模块进行功能测试 包 什么是包 当一个项目中模块越来越多，维护和开发不是那么高效的时候，我们可以引入一种比模块更高级语法：包。\n包是对相关功能的模块py文件的组织方式。\n包可以理解为文件夹，更确切的说，是一个包含__init__文件的文件夹。\n导入包的语法 import 包名[.模块名 [as 别名]] from 包名 import 模块名 [as 别名] from 包名.模块名 import 成员名 [as 别名] 案例：将上面案例中的cal .py文件放到utils包中管理，logger.py放到logger包中管理。\n-- demo main.py #执行文件 -- m_log #包 __init__.py logger.py #存储在logger包中的一个模块 from m_log import logger logger.get_logger() #调用了logger模块中的get_logger函数 常见模块 time模块 # \u003c1\u003e 时间戳 \u003e\u003e\u003e import time \u003e\u003e\u003e time.time() 1493136727.099066 # \u003c2\u003e 时间字符串 \u003e\u003e\u003e time.strftime(\"%Y-%m-%d %X\") #%Y:年 %m：月 %d：天 %X:时分秒 '2017-04-26 00:32:18' #\u003c3\u003e 程序暂定固定的时间 import time print('正在下载数据......') time.sleep(2) #程序暂定n秒 print('下载成功！') 小结：时间戳是计算机能够识别的时间；时间字符串是人能够看懂的时间；元组则是用来操作时间的\nimport time #计算一组程序执行的耗时 start = time.time() #测试代码 num = 0 for i in range(10000000): num += 1 print(num) ############################## print('总耗时：',time.time()-start) random模块 \u003e\u003e\u003e import random \u003e\u003e\u003e random.random() # 大于0且小于1之间的小数 0.7664338663654585 \u003e\u003e\u003e random.randint(1,5) # 大于等于1且小于等于5之间的整数 2 \u003e\u003e\u003e random.randrange(1,3) # 大于等于1且小于3之间的整数 1 \u003e\u003e\u003e random.choice([1,'23',[4,5]]) # 返回列表中的随机一个元素 1 \u003e\u003e\u003e random.sample([1,'23',[4,5]],2) # 列表元素任意2个随机组合 [[4, 5], '23'] \u003e\u003e\u003e random.uniform(1,3) #大于1小于3的小数 1.6270147180533838 \u003e\u003e\u003e item=[1,3,5,7,9] \u003e\u003e\u003e random.shuffle(item) # 直接将原来的列表元素打乱次序，不会返回一个新列表 \u003e\u003e\u003e item [5, 1, 3, 7, 9] os模块 os模块是与操作系统交互的一个接口\nimport os os.getcwd() # 获取当前工作目录，即当前python脚本工作的目录路径 os.chdir(\"dirname\") # 改变当前脚本工作目录；相当于shell下cd os.curdir # 返回当前目录: ('.') os.pardir # 获取当前目录的父目录字符串名：('..') os.makedirs('dirname1/dirname2') # ***可生成多层递归目录 os.removedirs('dirname1') # ***若目录为空，则删除，并递归到上一级目录，如若也为空，则删除，依此类推 os.mkdir('dirname') #*** 生成单级目录；相当于shell中mkdir dirname os.rmdir('dirname') # *** 删除单级空目录，若目录不为空则无法删除，报错；相当于shell中rmdir dirname os.listdir('dirname') # ***列出指定目录下的所有文件和子目录，包括隐藏文件，并以列表方式打印 os.remove() #*** 删除一个文件 os.rename(\"oldname\",\"newname\") #*** 重命名文件/目录 os.stat('path/filename') # 获取文件/目录信息 os.sep # 输出操作系统特定的路径分隔符，win下为\"\\\\\",Linux下为\"/\" os.linesep # 输出当前平台使用的行终止符，win下为\"\\t\\n\",Linux下为\"\\n\" os.pathsep # 输出用于分割文件路径的字符串 win下为;,Linux下为: os.name # 输出字符串指示当前使用平台。win-\u003e'nt'; Linux-\u003e'posix' os.system(\"bash command\") # 运行shell命令，直接显示 os.environ # 获取系统环境变量 os.path.abspath(path) # ***返回path规范化的绝对路径 os.path.split(path) # 将path分割成目录和文件名二元组返回 os.path.dirname(path) # 返回path的目录。其实就是os.path.split(path)的第一个元素 os.path.basename(path) # 返回path最后的文件名。如何path以／或\\结尾，那么就会返回空值。即os.path.split(path)的第二个元素 os.path.exists(path) # ***如果path存在，返回True；如果path不存在，返回False os.path.isabs(path) # 如果path是绝对路径，返回True os.path.isfile(path) # ***如果path是一个存在的文件，返回True。否则返回False os.path.isdir(path) # ***如果path是一个存在的目录，则返回True。否则返回False os.path.join(path1[, path2[, ...]]) # 将多个路径组合后返回，第一个绝对路径之前的参数将被忽略 os.path.getatime(path) # 返回path所指向的文件或者目录的最后访问时间 os.path.getmtime(path) # 返回path所指向的文件或者目录的最后修改时间 os.path.getsize(path) # ***返回path的大小 序列化模块：json（重点） 序列化： 将python中的字典，列表对象转换成指定形式字符串\n反序列化：将指定格式的字符串转换成字典，列表对象\n基本使用\nimport json dic = { 'hobby':['football','pingpang','smoke'], 'age':20, 'score':97.6, 'name':'zhangsan' } #序列化：将字典对象转换成了json格式的字符串 r = json.dumps(dic) print(r) import json str = '{\"hobby\": [\"football\", \"pingpang\", \"smoke\"], \"age\": 20, \"score\": 97.6, \"name\": \"zhangsan\"}' #反序列化：将字符串转换成了字典对象 dic = json.loads(str) print(dic) #持久化存储字典 import json dic = { 'hobby':['football','pingpang','smoke'], 'age':20, 'score':97.6, 'name':'zhangsan' } fp = open('./dic.json','a') #dump首先将dic字典进行序列化，然后将序列化后的结果写入到了fp表示的文件中 json.dump(dic,fp) fp.close() import json fp = open('./dic.json','r') #load将文件中的字符串数据进行读取，且将其转换成字典类型 dic = json.load(fp) print(dic) fp.close() 正则模块（重点） 什么是正则表达式？\n正则表达式(Regular Expression)是一种文本模式，包括普通字符（例如，a 到 z 之间的字母）和特殊字符（例如，*，+，？等）。 正则表达式使用单个字符串来描述、匹配一系列匹配某个句法规则的字符串。 常用的正则标识\n单字符： . : 除换行以外所有字符 [] ：[aoe] [a-w] 匹配集合中任意一个字符 \\d ：数字 [0-9] 数量修饰： * : 任意多次 \u003e=0 + : 至少1次 \u003e=1 ? : 可有可无 0次或者1次 {m} ：固定m次 hello{3,} {m,} ：至少m次 {m,n} ：m-n次 边界： $ : 以某某结尾 ^ : 以某某开头 分组： (ab) 命名分组： (?P正则表达式)，name是一个合法的标识符 贪婪模式： .* 非贪婪（惰性）模式： .*? 正则在python中的使用\n基于re模块进行正则匹配操作\n主要使用re模块中的findall进行指定规则的匹配\nfindall(str,rule) str表示即将进行匹配的原始字符串数据 rule表示指定规则的正则表达式 findall返回的是列表，列表中存储匹配到的指定内容 练习\nimport re #提取170 string = '我喜欢身高为170的女孩' ex = '\\d+' result = re.findall(ex,string) print(result[0]) ##################################################################### #提取出http和https key='http://www.baidu.com and https://boob.com' ex = 'https?' result = re.findall(ex,key) print(result) ##################################################################### import re #提取出hello key='lalalahellohahah' ex = '(.*)' result = re.findall(ex,key) print(result) ##################################################################### #提取出hit. key='bobo@hit.edu.com'#想要匹配到hit. # ex = 'h.*\\.' #贪婪模式 ex = 'h.*?\\.' #？将正则的贪婪模式调整为非贪婪模式。默认下为贪婪模式 result = re.findall(ex,key) print(result) ##################################################################### #匹配sas和saas key='saas and sas and saaas' ex = 'sa{1,2}s' result = re.findall(ex,key) print(result) ##################################################################### key = '你好我的手机号是13222222222你记住了吗' ex = '1[3,5,7,8,9]\\d{9}' result = re.findall(ex,key) print(result) ##################################################################### #提取ip和端口号 import re s = \"my computer ip is '230.192.168.78',and port is 8889 you got it?\" rep = re.search(r\"ip is '(?P\\d+\\.\\d+\\.\\d+\\.\\d+).* port is (?P\\d+)\",s) rep.group('ip'),rep.group('port')#通过命名分组引用分组 ",
+  "wordCount" : "3841",
+  "inLanguage": "en",
+  "datePublished": "2023-02-10T11:06:06+08:00",
+  "dateModified": "2023-02-10T11:06:06+08:00",
+  "author":[{
+    "@type": "Person",
+    "name": "Felix"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://canw0916.github.io/posts/tech/%E6%A8%A1%E5%9D%97%E4%B8%8E%E5%8C%85/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Felix's Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://canw0916.github.io/img/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+
+
+
+<script async src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://canw0916.github.io/" accesskey="h" title="Felix&#39;s Blog (Alt + H)">
+            <img src="https://canw0916.github.io/img/android-chrome-512x512.png" alt="logo" aria-label="logo"
+                 height="35">Felix&#39;s Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                         stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                         stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://canw0916.github.io/search" title="🔍 搜索 (Alt &#43; /)" accesskey=/>
+                <span>🔍 搜索</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://canw0916.github.io/" title="🏠 主页">
+                <span>🏠 主页</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://canw0916.github.io/posts" title="📚 文章">
+                <span>📚 文章</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://canw0916.github.io/tags" title="🧩 标签">
+                <span>🧩 标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://canw0916.github.io/archives/" title="⏱️ 时间轴">
+                <span>⏱️ 时间轴</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://canw0916.github.io/about" title="🙋🏻‍♂️ 关于">
+                <span>🙋🏻‍♂️ 关于</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://canw0916.github.io/links" title="🤝 友链">
+                <span>🤝 友链</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main page">
+<article class="post-single">
+    <div id="single-content">
+        <header class="post-header">
+            <div class="breadcrumbs"><a href="https://canw0916.github.io/">🏠主页</a>&nbsp;»&nbsp;<a href="https://canw0916.github.io/posts/">📚文章</a>&nbsp;»&nbsp;<a href="https://canw0916.github.io/posts/tech/">👨🏻‍💻 技术</a></div>
+            <h1 class="post-title">
+                模块与包
+            </h1>
+            <div class="post-meta">📅&nbsp;<span title='2023-02-10 11:06:06 +0800 CST'>2023-02-10</span>&nbsp;&nbsp;📄&nbsp;3841字&nbsp;&nbsp;⏳&nbsp;8分钟&nbsp;&nbsp;
 👦&nbsp;Felix
-&nbsp;&nbsp;🏷️ &nbsp;<ul class=post-tags-meta><a href=https://canw0916.github.io/tags/python/>python</a></ul><span id=busuanzi_container_page_pv>&nbsp; 🎯 <span id=busuanzi_value_page_pv></span></span></div></header><aside id=toc-container class="toc-container wide"><div class=toc><details open><summary accesskey=c title="(Alt + C)"><span class=details>文章目录</span></summary><div class=inner><ul><li><a href=#%e6%a8%a1%e5%9d%97%e4%b8%8e%e5%8c%85 aria-label=模块与包>模块与包</a><ul><li><a href=#%e6%a8%a1%e5%9d%97 aria-label=模块>模块</a><ul><li><a href=#%e6%a8%a1%e5%9d%97%e4%bb%8b%e7%bb%8d aria-label=模块介绍>模块介绍</a></li><li><a href=#%e6%a8%a1%e5%9d%97%e5%af%bc%e5%85%a5 aria-label=模块导入>模块导入</a></li><li><a href=#__name__- aria-label="__name__ "><code>__name__</code></a></li></ul></li><li><a href=#%e5%8c%85 aria-label=包>包</a><ul><li><a href=#%e4%bb%80%e4%b9%88%e6%98%af%e5%8c%85 aria-label=什么是包>什么是包</a></li><li><a href=#%e5%af%bc%e5%85%a5%e5%8c%85%e7%9a%84%e8%af%ad%e6%b3%95 aria-label=导入包的语法>导入包的语法</a></li></ul></li></ul></li><li><a href=#%e5%b8%b8%e8%a7%81%e6%a8%a1%e5%9d%97 aria-label=常见模块>常见模块</a><ul><li><a href=#time%e6%a8%a1%e5%9d%97 aria-label=time模块>time模块</a></li><li><a href=#random%e6%a8%a1%e5%9d%97 aria-label=random模块>random模块</a></li><li><a href=#os%e6%a8%a1%e5%9d%97 aria-label=os模块>os模块</a></li><li><a href=#%e5%ba%8f%e5%88%97%e5%8c%96%e6%a8%a1%e5%9d%97json%e9%87%8d%e7%82%b9 aria-label=序列化模块：json（重点）>序列化模块：json（重点）</a></li><li><a href=#%e6%ad%a3%e5%88%99%e6%a8%a1%e5%9d%97%e9%87%8d%e7%82%b9 aria-label=正则模块（重点）>正则模块（重点）</a></li></ul></li></ul></div></details></div></aside><script>let activeElement,elements;window.addEventListener("DOMContentLoaded",function(){checkTocPosition(),elements=document.querySelectorAll("h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]"),activeElement=elements[0];const t=encodeURI(activeElement.getAttribute("id")).toLowerCase();document.querySelector(`.inner ul li a[href="#${t}"]`).classList.add("active")},!1),window.addEventListener("resize",function(){checkTocPosition()},!1),window.addEventListener("scroll",()=>{activeElement=Array.from(elements).find(e=>{if(getOffsetTop(e)-window.pageYOffset>0&&getOffsetTop(e)-window.pageYOffset<window.innerHeight/2)return e})||activeElement,elements.forEach(e=>{const t=encodeURI(e.getAttribute("id")).toLowerCase();e===activeElement?document.querySelector(`.inner ul li a[href="#${t}"]`).classList.add("active"):document.querySelector(`.inner ul li a[href="#${t}"]`).classList.remove("active")})},!1);const main=parseInt(getComputedStyle(document.body).getPropertyValue("--article-width"),10),toc=parseInt(getComputedStyle(document.body).getPropertyValue("--toc-width"),10),gap=parseInt(getComputedStyle(document.body).getPropertyValue("--gap"),10);function checkTocPosition(){const e=document.body.scrollWidth;e-main-toc*2-gap*4>0?document.getElementById("toc-container").classList.add("wide"):document.getElementById("toc-container").classList.remove("wide")}function getOffsetTop(e){if(!e.getClientRects().length)return 0;let t=e.getBoundingClientRect(),n=e.ownerDocument.defaultView;return t.top+n.pageYOffset}</script><div class=post-content><h2 id=模块与包>模块与包<a hidden class=anchor aria-hidden=true href=#模块与包>#</a></h2><h3 id=模块>模块<a hidden class=anchor aria-hidden=true href=#模块>#</a></h3><h4 id=模块介绍>模块介绍<a hidden class=anchor aria-hidden=true href=#模块介绍>#</a></h4><p>在计算机程序的开发过程中，随着程序代码越写越多，在一个文件里代码就会越来越长，越来越不容易维护。</p><p>为了编写可维护的代码，我们把很多函数分组，分别放到不同的文件里，这样，每个文件包含的代码就相对较少，很多编程语言都采用这种组织代码的方式。而这样的一个<code>py</code>文件在Python中称为模块（Module）。</p><p>模块是组织代码的更高级形式，大大提高了代码的阅读性和可维护性。</p><p>模块一共四种：</p><ul><li>解释器内建模块</li><li>python标准库</li><li>第三方模块</li><li>应用程序自定义模块</li></ul><p>另外，使用模块还可以避免函数名和变量名冲突。相同名字的函数和变量完全可以分别存在不同的模块中，因此，我们自己在编写模块时，不必考虑名字会与其他模块冲突。</p><h4 id=模块导入>模块导入<a hidden class=anchor aria-hidden=true href=#模块导入>#</a></h4><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=s1>&#39;&#39;&#39;
-</span></span></span><span class=line><span class=cl><span class=s1># 方式1：导入一个模块
-</span></span></span><span class=line><span class=cl><span class=s1>import 模块名
-</span></span></span><span class=line><span class=cl><span class=s1>import 模块名 as 别名
-</span></span></span><span class=line><span class=cl><span class=s1>
-</span></span></span><span class=line><span class=cl><span class=s1># 方式2：导入多个模块
-</span></span></span><span class=line><span class=cl><span class=s1>import (
-</span></span></span><span class=line><span class=cl><span class=s1>   模块1
-</span></span></span><span class=line><span class=cl><span class=s1>   模块2 
-</span></span></span><span class=line><span class=cl><span class=s1>   )
-</span></span></span><span class=line><span class=cl><span class=s1>
-</span></span></span><span class=line><span class=cl><span class=s1>import 模块1,模块2
-</span></span></span><span class=line><span class=cl><span class=s1>
-</span></span></span><span class=line><span class=cl><span class=s1># 方式3：导入成员变量
-</span></span></span><span class=line><span class=cl><span class=s1>from 模块名 import 成员变量
-</span></span></span><span class=line><span class=cl><span class=s1>from 模块名 import *
-</span></span></span><span class=line><span class=cl><span class=s1>&#39;&#39;&#39;</span>
-</span></span></code></pre></div><blockquote><p>导入模块时会执行模块，多次导入只执行一次。</p></blockquote><p>案例：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>cal</span><span class=o>.</span><span class=n>py</span>
-</span></span><span class=line><span class=cl><span class=n>logger</span><span class=o>.</span><span class=n>py</span>
-</span></span><span class=line><span class=cl><span class=n>main</span><span class=o>.</span><span class=n>py</span>
-</span></span></code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=c1>#cal.py</span>
-</span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>add</span><span class=p>(</span><span class=n>x</span><span class=p>,</span><span class=n>y</span><span class=p>):</span>
-</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=n>x</span> <span class=o>+</span> <span class=n>y</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>mul</span><span class=p>(</span><span class=n>x</span><span class=p>,</span><span class=n>y</span><span class=p>):</span>
-</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=n>x</span> <span class=o>*</span> <span class=n>y</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=s1>&#39;这是cal模块文件&#39;</span><span class=p>)</span>
-</span></span></code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=c1>#logger.py</span>
-</span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>get_logger</span><span class=p>():</span>
-</span></span><span class=line><span class=cl>    <span class=nb>print</span><span class=p>(</span><span class=s1>&#39;打印日志！&#39;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>    
-</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=s1>&#39;这是logger模块文件&#39;</span><span class=p>)</span>
-</span></span></code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=c1>#main.py</span>
-</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>cal</span> <span class=c1>#导入了cal模块</span>
-</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>logger</span> <span class=c1>#导入和logger模块</span>
-</span></span><span class=line><span class=cl><span class=c1>#注意：import导入模块，就好比是将模块中的代码执行了</span>
-</span></span><span class=line><span class=cl><span class=kn>from</span> <span class=nn>cal</span> <span class=kn>import</span> <span class=n>mul</span> <span class=c1>#将cal模块中的mul成员进行导入</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c1>#调用用了cal模块中的add函数</span>
-</span></span><span class=line><span class=cl><span class=n>result</span> <span class=o>=</span> <span class=n>cal</span><span class=o>.</span><span class=n>add</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span><span class=mi>2</span><span class=p>)</span>
-</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>result</span><span class=p>)</span>
-</span></span><span class=line><span class=cl><span class=n>c</span> <span class=o>=</span> <span class=n>mul</span><span class=p>(</span><span class=mi>3</span><span class=p>,</span><span class=mi>4</span><span class=p>)</span>
-</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>c</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c1>#调用了logger模块中的get_logger函数</span>
-</span></span><span class=line><span class=cl><span class=n>logger</span><span class=o>.</span><span class=n>get_logger</span><span class=p>()</span>
-</span></span></code></pre></div><ul><li>注意：执行源文件的名字一定不要和模块的名字同名</li></ul><h4 id=__name__-><code>__name__ </code><a hidden class=anchor aria-hidden=true href=#__name__->#</a></h4><p><code>__name__</code>是python内置变量，存储的是当前模块名称。</p><p>对于很多编程语言来说，程序都必须要有一个入口。像C，C++都有一个main函数作为程序的入口，而Python作为解释性脚本语言，没有一个统一的入口，因为Python程序运行时是从模块顶行开始，逐行进行翻译执行，所以，最顶层（没有被缩进）的代码都会被执行，所以Python中并不需要一个统一的main()作为程序的入口。</p><p>在刚才的案例中三个模块都打印一次<code>__name__</code></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=c1>#cal.py</span>
-</span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>add</span><span class=p>(</span><span class=n>x</span><span class=p>,</span><span class=n>y</span><span class=p>):</span>
-</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=n>x</span> <span class=o>+</span> <span class=n>y</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>mul</span><span class=p>(</span><span class=n>x</span><span class=p>,</span><span class=n>y</span><span class=p>):</span>
-</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=n>x</span> <span class=o>*</span> <span class=n>y</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=s1>&#39;这是cal模块文件,__name__内置变量的值为：&#39;</span><span class=p>,</span><span class=vm>__name__</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c1>#logger.py</span>
-</span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>get_logger</span><span class=p>():</span>
-</span></span><span class=line><span class=cl>    <span class=nb>print</span><span class=p>(</span><span class=s1>&#39;打印日志！&#39;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=s1>&#39;这是logger模块文件,__name__内置变量的值为：&#39;</span><span class=p>,</span><span class=vm>__name__</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c1>#main.py：作为执行文件</span>
-</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>cal</span> <span class=c1>#导入了cal模块</span>
-</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>logger</span> <span class=c1>#导入和logger模块</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=s1>&#39;main文件的__name__这个内置变量为：&#39;</span><span class=p>,</span><span class=vm>__name__</span><span class=p>)</span>
-</span></span></code></pre></div><p>结果为：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>这是cal模块文件</span><span class=p>,</span><span class=n>__name__内置变量的值为</span><span class=err>：</span> <span class=n>cal</span>
-</span></span><span class=line><span class=cl><span class=n>这是logger模块文件</span><span class=p>,</span><span class=n>__name__内置变量的值为</span><span class=err>：</span> <span class=n>logger</span>
-</span></span><span class=line><span class=cl><span class=n>main文件的__name__这个内置变量为</span><span class=err>：</span> <span class=n>__main__</span>
-</span></span></code></pre></div><p>通过结果发现<code>__name__</code>只有在执行模块中打印<code>__main__</code>,在其他导入模块中打印各自模块的名称。</p><p>所以，<code>__name__</code>可以有以下作用：</p><ul><li>利用<code>__name__=="__main__"</code>声明程序入口。</li><li>可以对导入的模块进行功能测试</li></ul><h3 id=包>包<a hidden class=anchor aria-hidden=true href=#包>#</a></h3><h4 id=什么是包>什么是包<a hidden class=anchor aria-hidden=true href=#什么是包>#</a></h4><p>当一个项目中模块越来越多，维护和开发不是那么高效的时候，我们可以引入一种比模块更高级语法：包。</p><p>包是对相关功能的模块<code>py</code>文件的组织方式。</p><p>包可以理解为文件夹，更确切的说，是一个包含<code>__init__</code>文件的文件夹。</p><h4 id=导入包的语法>导入包的语法<a hidden class=anchor aria-hidden=true href=#导入包的语法>#</a></h4><ol><li><code>import 包名[.模块名 [as 别名]]</code></li><li><code>from 包名 import 模块名 [as 别名]</code></li><li><code>from 包名.模块名 import 成员名 [as 别名]</code></li></ol><p>案例：将上面案例中的<code>cal .py</code>文件放到<code>utils</code>包中管理，<code>logger.py</code>放到<code>logger</code>包中管理。</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>-- demo
-</span></span><span class=line><span class=cl>   main.py  #执行文件
-</span></span><span class=line><span class=cl>   -- m_log #包
-</span></span><span class=line><span class=cl>   		__init__.py
-</span></span><span class=line><span class=cl>      logger.py #存储在logger包中的一个模块
-</span></span></code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=kn>from</span> <span class=nn>m_log</span> <span class=kn>import</span> <span class=n>logger</span>
-</span></span><span class=line><span class=cl><span class=n>logger</span><span class=o>.</span><span class=n>get_logger</span><span class=p>()</span> <span class=c1>#调用了logger模块中的get_logger函数</span>
-</span></span></code></pre></div><h2 id=常见模块>常见模块<a hidden class=anchor aria-hidden=true href=#常见模块>#</a></h2><h3 id=time模块>time模块<a hidden class=anchor aria-hidden=true href=#time模块>#</a></h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=c1># &lt;1&gt; 时间戳</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=o>&gt;&gt;&gt;</span> <span class=kn>import</span> <span class=nn>time</span>
-</span></span><span class=line><span class=cl><span class=o>&gt;&gt;&gt;</span> <span class=n>time</span><span class=o>.</span><span class=n>time</span><span class=p>()</span>     
-</span></span><span class=line><span class=cl><span class=mf>1493136727.099066</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c1># &lt;2&gt; 时间字符串</span>
-</span></span><span class=line><span class=cl><span class=o>&gt;&gt;&gt;</span> <span class=n>time</span><span class=o>.</span><span class=n>strftime</span><span class=p>(</span><span class=s2>&#34;%Y-%m-</span><span class=si>%d</span><span class=s2> </span><span class=si>%X</span><span class=s2>&#34;</span><span class=p>)</span> <span class=c1>#%Y:年 %m：月 %d：天 %X:时分秒</span>
-</span></span><span class=line><span class=cl><span class=s1>&#39;2017-04-26 00:32:18&#39;</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c1>#&lt;3&gt; 程序暂定固定的时间</span>
-</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>time</span>
-</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=s1>&#39;正在下载数据......&#39;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl><span class=n>time</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mi>2</span><span class=p>)</span> <span class=c1>#程序暂定n秒</span>
-</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=s1>&#39;下载成功！&#39;</span><span class=p>)</span>
-</span></span></code></pre></div><p>小结：时间戳是计算机能够识别的时间；时间字符串是人能够看懂的时间；元组则是用来操作时间的</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=kn>import</span> <span class=nn>time</span>
-</span></span><span class=line><span class=cl><span class=c1>#计算一组程序执行的耗时</span>
-</span></span><span class=line><span class=cl><span class=n>start</span> <span class=o>=</span> <span class=n>time</span><span class=o>.</span><span class=n>time</span><span class=p>()</span>
-</span></span><span class=line><span class=cl><span class=c1>#测试代码</span>
-</span></span><span class=line><span class=cl><span class=n>num</span> <span class=o>=</span> <span class=mi>0</span>
-</span></span><span class=line><span class=cl><span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>10000000</span><span class=p>):</span>
-</span></span><span class=line><span class=cl>    <span class=n>num</span> <span class=o>+=</span> <span class=mi>1</span>
-</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>num</span><span class=p>)</span>
-</span></span><span class=line><span class=cl><span class=c1>##############################</span>
-</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=s1>&#39;总耗时：&#39;</span><span class=p>,</span><span class=n>time</span><span class=o>.</span><span class=n>time</span><span class=p>()</span><span class=o>-</span><span class=n>start</span><span class=p>)</span>
-</span></span></code></pre></div><h3 id=random模块>random模块<a hidden class=anchor aria-hidden=true href=#random模块>#</a></h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=o>&gt;&gt;&gt;</span> <span class=kn>import</span> <span class=nn>random</span>
-</span></span><span class=line><span class=cl><span class=o>&gt;&gt;&gt;</span> <span class=n>random</span><span class=o>.</span><span class=n>random</span><span class=p>()</span>      <span class=c1># 大于0且小于1之间的小数</span>
-</span></span><span class=line><span class=cl><span class=mf>0.7664338663654585</span>
-</span></span><span class=line><span class=cl><span class=o>&gt;&gt;&gt;</span> <span class=n>random</span><span class=o>.</span><span class=n>randint</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span><span class=mi>5</span><span class=p>)</span>  <span class=c1># 大于等于1且小于等于5之间的整数</span>
-</span></span><span class=line><span class=cl><span class=mi>2</span>
-</span></span><span class=line><span class=cl><span class=o>&gt;&gt;&gt;</span> <span class=n>random</span><span class=o>.</span><span class=n>randrange</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span><span class=mi>3</span><span class=p>)</span> <span class=c1># 大于等于1且小于3之间的整数</span>
-</span></span><span class=line><span class=cl><span class=mi>1</span>
-</span></span><span class=line><span class=cl><span class=o>&gt;&gt;&gt;</span> <span class=n>random</span><span class=o>.</span><span class=n>choice</span><span class=p>([</span><span class=mi>1</span><span class=p>,</span><span class=s1>&#39;23&#39;</span><span class=p>,[</span><span class=mi>4</span><span class=p>,</span><span class=mi>5</span><span class=p>]])</span>  <span class=c1># 返回列表中的随机一个元素</span>
-</span></span><span class=line><span class=cl><span class=mi>1</span>
-</span></span><span class=line><span class=cl><span class=o>&gt;&gt;&gt;</span> <span class=n>random</span><span class=o>.</span><span class=n>sample</span><span class=p>([</span><span class=mi>1</span><span class=p>,</span><span class=s1>&#39;23&#39;</span><span class=p>,[</span><span class=mi>4</span><span class=p>,</span><span class=mi>5</span><span class=p>]],</span><span class=mi>2</span><span class=p>)</span> <span class=c1># 列表元素任意2个随机组合</span>
-</span></span><span class=line><span class=cl><span class=p>[[</span><span class=mi>4</span><span class=p>,</span> <span class=mi>5</span><span class=p>],</span> <span class=s1>&#39;23&#39;</span><span class=p>]</span>
-</span></span><span class=line><span class=cl><span class=o>&gt;&gt;&gt;</span> <span class=n>random</span><span class=o>.</span><span class=n>uniform</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span><span class=mi>3</span><span class=p>)</span> <span class=c1>#大于1小于3的小数</span>
-</span></span><span class=line><span class=cl><span class=mf>1.6270147180533838</span>
-</span></span><span class=line><span class=cl><span class=o>&gt;&gt;&gt;</span> <span class=n>item</span><span class=o>=</span><span class=p>[</span><span class=mi>1</span><span class=p>,</span><span class=mi>3</span><span class=p>,</span><span class=mi>5</span><span class=p>,</span><span class=mi>7</span><span class=p>,</span><span class=mi>9</span><span class=p>]</span>
-</span></span><span class=line><span class=cl><span class=o>&gt;&gt;&gt;</span> <span class=n>random</span><span class=o>.</span><span class=n>shuffle</span><span class=p>(</span><span class=n>item</span><span class=p>)</span> <span class=c1># 直接将原来的列表元素打乱次序，不会返回一个新列表</span>
-</span></span><span class=line><span class=cl><span class=o>&gt;&gt;&gt;</span> <span class=n>item</span>
-</span></span><span class=line><span class=cl><span class=p>[</span><span class=mi>5</span><span class=p>,</span> <span class=mi>1</span><span class=p>,</span> <span class=mi>3</span><span class=p>,</span> <span class=mi>7</span><span class=p>,</span> <span class=mi>9</span><span class=p>]</span>
-</span></span></code></pre></div><h3 id=os模块>os模块<a hidden class=anchor aria-hidden=true href=#os模块>#</a></h3><p>os模块是与操作系统交互的一个接口</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=kn>import</span> <span class=nn>os</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=n>os</span><span class=o>.</span><span class=n>getcwd</span><span class=p>()</span> <span class=c1># 获取当前工作目录，即当前python脚本工作的目录路径</span>
-</span></span><span class=line><span class=cl><span class=n>os</span><span class=o>.</span><span class=n>chdir</span><span class=p>(</span><span class=s2>&#34;dirname&#34;</span><span class=p>)</span>  <span class=c1># 改变当前脚本工作目录；相当于shell下cd</span>
-</span></span><span class=line><span class=cl><span class=n>os</span><span class=o>.</span><span class=n>curdir</span>   <span class=c1># 返回当前目录: (&#39;.&#39;)</span>
-</span></span><span class=line><span class=cl><span class=n>os</span><span class=o>.</span><span class=n>pardir</span>  <span class=c1># 获取当前目录的父目录字符串名：(&#39;..&#39;)</span>
-</span></span><span class=line><span class=cl><span class=n>os</span><span class=o>.</span><span class=n>makedirs</span><span class=p>(</span><span class=s1>&#39;dirname1/dirname2&#39;</span><span class=p>)</span>   <span class=c1># ***可生成多层递归目录</span>
-</span></span><span class=line><span class=cl><span class=n>os</span><span class=o>.</span><span class=n>removedirs</span><span class=p>(</span><span class=s1>&#39;dirname1&#39;</span><span class=p>)</span>    <span class=c1># ***若目录为空，则删除，并递归到上一级目录，如若也为空，则删除，依此类推</span>
-</span></span><span class=line><span class=cl><span class=n>os</span><span class=o>.</span><span class=n>mkdir</span><span class=p>(</span><span class=s1>&#39;dirname&#39;</span><span class=p>)</span>    <span class=c1>#*** 生成单级目录；相当于shell中mkdir dirname</span>
-</span></span><span class=line><span class=cl><span class=n>os</span><span class=o>.</span><span class=n>rmdir</span><span class=p>(</span><span class=s1>&#39;dirname&#39;</span><span class=p>)</span>    <span class=c1># *** 删除单级空目录，若目录不为空则无法删除，报错；相当于shell中rmdir dirname</span>
-</span></span><span class=line><span class=cl><span class=n>os</span><span class=o>.</span><span class=n>listdir</span><span class=p>(</span><span class=s1>&#39;dirname&#39;</span><span class=p>)</span>    <span class=c1># ***列出指定目录下的所有文件和子目录，包括隐藏文件，并以列表方式打印</span>
-</span></span><span class=line><span class=cl><span class=n>os</span><span class=o>.</span><span class=n>remove</span><span class=p>()</span>  <span class=c1>#*** 删除一个文件</span>
-</span></span><span class=line><span class=cl><span class=n>os</span><span class=o>.</span><span class=n>rename</span><span class=p>(</span><span class=s2>&#34;oldname&#34;</span><span class=p>,</span><span class=s2>&#34;newname&#34;</span><span class=p>)</span>  <span class=c1>#*** 重命名文件/目录</span>
-</span></span><span class=line><span class=cl><span class=n>os</span><span class=o>.</span><span class=n>stat</span><span class=p>(</span><span class=s1>&#39;path/filename&#39;</span><span class=p>)</span> <span class=c1>#  获取文件/目录信息</span>
-</span></span><span class=line><span class=cl><span class=n>os</span><span class=o>.</span><span class=n>sep</span>    <span class=c1># 输出操作系统特定的路径分隔符，win下为&#34;\\&#34;,Linux下为&#34;/&#34;</span>
-</span></span><span class=line><span class=cl><span class=n>os</span><span class=o>.</span><span class=n>linesep</span>    <span class=c1># 输出当前平台使用的行终止符，win下为&#34;\t\n&#34;,Linux下为&#34;\n&#34;</span>
-</span></span><span class=line><span class=cl><span class=n>os</span><span class=o>.</span><span class=n>pathsep</span>    <span class=c1># 输出用于分割文件路径的字符串 win下为;,Linux下为:</span>
-</span></span><span class=line><span class=cl><span class=n>os</span><span class=o>.</span><span class=n>name</span>    <span class=c1># 输出字符串指示当前使用平台。win-&gt;&#39;nt&#39;; Linux-&gt;&#39;posix&#39;</span>
-</span></span><span class=line><span class=cl><span class=n>os</span><span class=o>.</span><span class=n>system</span><span class=p>(</span><span class=s2>&#34;bash command&#34;</span><span class=p>)</span>  <span class=c1># 运行shell命令，直接显示</span>
-</span></span><span class=line><span class=cl><span class=n>os</span><span class=o>.</span><span class=n>environ</span>  <span class=c1># 获取系统环境变量</span>
-</span></span><span class=line><span class=cl><span class=n>os</span><span class=o>.</span><span class=n>path</span><span class=o>.</span><span class=n>abspath</span><span class=p>(</span><span class=n>path</span><span class=p>)</span>  <span class=c1># ***返回path规范化的绝对路径</span>
-</span></span><span class=line><span class=cl><span class=n>os</span><span class=o>.</span><span class=n>path</span><span class=o>.</span><span class=n>split</span><span class=p>(</span><span class=n>path</span><span class=p>)</span>  <span class=c1># 将path分割成目录和文件名二元组返回</span>
-</span></span><span class=line><span class=cl><span class=n>os</span><span class=o>.</span><span class=n>path</span><span class=o>.</span><span class=n>dirname</span><span class=p>(</span><span class=n>path</span><span class=p>)</span>  <span class=c1># 返回path的目录。其实就是os.path.split(path)的第一个元素</span>
-</span></span><span class=line><span class=cl><span class=n>os</span><span class=o>.</span><span class=n>path</span><span class=o>.</span><span class=n>basename</span><span class=p>(</span><span class=n>path</span><span class=p>)</span> <span class=c1>#  返回path最后的文件名。如何path以／或\结尾，那么就会返回空值。即os.path.split(path)的第二个元素</span>
-</span></span><span class=line><span class=cl><span class=n>os</span><span class=o>.</span><span class=n>path</span><span class=o>.</span><span class=n>exists</span><span class=p>(</span><span class=n>path</span><span class=p>)</span> <span class=c1>#  ***如果path存在，返回True；如果path不存在，返回False</span>
-</span></span><span class=line><span class=cl><span class=n>os</span><span class=o>.</span><span class=n>path</span><span class=o>.</span><span class=n>isabs</span><span class=p>(</span><span class=n>path</span><span class=p>)</span>  <span class=c1># 如果path是绝对路径，返回True</span>
-</span></span><span class=line><span class=cl><span class=n>os</span><span class=o>.</span><span class=n>path</span><span class=o>.</span><span class=n>isfile</span><span class=p>(</span><span class=n>path</span><span class=p>)</span>  <span class=c1># ***如果path是一个存在的文件，返回True。否则返回False</span>
-</span></span><span class=line><span class=cl><span class=n>os</span><span class=o>.</span><span class=n>path</span><span class=o>.</span><span class=n>isdir</span><span class=p>(</span><span class=n>path</span><span class=p>)</span>  <span class=c1># ***如果path是一个存在的目录，则返回True。否则返回False</span>
-</span></span><span class=line><span class=cl><span class=n>os</span><span class=o>.</span><span class=n>path</span><span class=o>.</span><span class=n>join</span><span class=p>(</span><span class=n>path1</span><span class=p>[,</span> <span class=n>path2</span><span class=p>[,</span> <span class=o>...</span><span class=p>]])</span>  <span class=c1># 将多个路径组合后返回，第一个绝对路径之前的参数将被忽略</span>
-</span></span><span class=line><span class=cl><span class=n>os</span><span class=o>.</span><span class=n>path</span><span class=o>.</span><span class=n>getatime</span><span class=p>(</span><span class=n>path</span><span class=p>)</span>  <span class=c1># 返回path所指向的文件或者目录的最后访问时间</span>
-</span></span><span class=line><span class=cl><span class=n>os</span><span class=o>.</span><span class=n>path</span><span class=o>.</span><span class=n>getmtime</span><span class=p>(</span><span class=n>path</span><span class=p>)</span>  <span class=c1># 返回path所指向的文件或者目录的最后修改时间</span>
-</span></span><span class=line><span class=cl><span class=n>os</span><span class=o>.</span><span class=n>path</span><span class=o>.</span><span class=n>getsize</span><span class=p>(</span><span class=n>path</span><span class=p>)</span> <span class=c1># ***返回path的大小</span>
-</span></span></code></pre></div><h3 id=序列化模块json重点>序列化模块：json（重点）<a hidden class=anchor aria-hidden=true href=#序列化模块json重点>#</a></h3><blockquote><p>序列化： 将python中的字典，列表对象转换成指定形式字符串</p><p>反序列化：将指定格式的字符串转换成字典，列表对象</p></blockquote><ul><li><p>基本使用</p></li><li><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=kn>import</span> <span class=nn>json</span>
-</span></span><span class=line><span class=cl><span class=n>dic</span> <span class=o>=</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>    <span class=s1>&#39;hobby&#39;</span><span class=p>:[</span><span class=s1>&#39;football&#39;</span><span class=p>,</span><span class=s1>&#39;pingpang&#39;</span><span class=p>,</span><span class=s1>&#39;smoke&#39;</span><span class=p>],</span>
-</span></span><span class=line><span class=cl>    <span class=s1>&#39;age&#39;</span><span class=p>:</span><span class=mi>20</span><span class=p>,</span>
-</span></span><span class=line><span class=cl>    <span class=s1>&#39;score&#39;</span><span class=p>:</span><span class=mf>97.6</span><span class=p>,</span>
-</span></span><span class=line><span class=cl>    <span class=s1>&#39;name&#39;</span><span class=p>:</span><span class=s1>&#39;zhangsan&#39;</span>
-</span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span><span class=line><span class=cl><span class=c1>#序列化：将字典对象转换成了json格式的字符串</span>
-</span></span><span class=line><span class=cl><span class=n>r</span> <span class=o>=</span> <span class=n>json</span><span class=o>.</span><span class=n>dumps</span><span class=p>(</span><span class=n>dic</span><span class=p>)</span>
-</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>r</span><span class=p>)</span>
-</span></span></code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=kn>import</span> <span class=nn>json</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=nb>str</span> <span class=o>=</span> <span class=s1>&#39;{&#34;hobby&#34;: [&#34;football&#34;, &#34;pingpang&#34;, &#34;smoke&#34;], &#34;age&#34;: 20, &#34;score&#34;: 97.6, &#34;name&#34;: &#34;zhangsan&#34;}&#39;</span>
-</span></span><span class=line><span class=cl><span class=c1>#反序列化：将字符串转换成了字典对象</span>
-</span></span><span class=line><span class=cl><span class=n>dic</span> <span class=o>=</span> <span class=n>json</span><span class=o>.</span><span class=n>loads</span><span class=p>(</span><span class=nb>str</span><span class=p>)</span>
-</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>dic</span><span class=p>)</span>
-</span></span></code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=c1>#持久化存储字典</span>
-</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>json</span>
-</span></span><span class=line><span class=cl><span class=n>dic</span> <span class=o>=</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>    <span class=s1>&#39;hobby&#39;</span><span class=p>:[</span><span class=s1>&#39;football&#39;</span><span class=p>,</span><span class=s1>&#39;pingpang&#39;</span><span class=p>,</span><span class=s1>&#39;smoke&#39;</span><span class=p>],</span>
-</span></span><span class=line><span class=cl>    <span class=s1>&#39;age&#39;</span><span class=p>:</span><span class=mi>20</span><span class=p>,</span>
-</span></span><span class=line><span class=cl>    <span class=s1>&#39;score&#39;</span><span class=p>:</span><span class=mf>97.6</span><span class=p>,</span>
-</span></span><span class=line><span class=cl>    <span class=s1>&#39;name&#39;</span><span class=p>:</span><span class=s1>&#39;zhangsan&#39;</span>
-</span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span><span class=line><span class=cl><span class=n>fp</span> <span class=o>=</span> <span class=nb>open</span><span class=p>(</span><span class=s1>&#39;./dic.json&#39;</span><span class=p>,</span><span class=s1>&#39;a&#39;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl><span class=c1>#dump首先将dic字典进行序列化，然后将序列化后的结果写入到了fp表示的文件中</span>
-</span></span><span class=line><span class=cl><span class=n>json</span><span class=o>.</span><span class=n>dump</span><span class=p>(</span><span class=n>dic</span><span class=p>,</span><span class=n>fp</span><span class=p>)</span>
-</span></span><span class=line><span class=cl><span class=n>fp</span><span class=o>.</span><span class=n>close</span><span class=p>()</span>
-</span></span></code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=kn>import</span> <span class=nn>json</span>
-</span></span><span class=line><span class=cl><span class=n>fp</span> <span class=o>=</span> <span class=nb>open</span><span class=p>(</span><span class=s1>&#39;./dic.json&#39;</span><span class=p>,</span><span class=s1>&#39;r&#39;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl><span class=c1>#load将文件中的字符串数据进行读取，且将其转换成字典类型</span>
-</span></span><span class=line><span class=cl><span class=n>dic</span> <span class=o>=</span> <span class=n>json</span><span class=o>.</span><span class=n>load</span><span class=p>(</span><span class=n>fp</span><span class=p>)</span>
-</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>dic</span><span class=p>)</span>
-</span></span><span class=line><span class=cl><span class=n>fp</span><span class=o>.</span><span class=n>close</span><span class=p>()</span>
-</span></span></code></pre></div></li></ul><h3 id=正则模块重点>正则模块（重点）<a hidden class=anchor aria-hidden=true href=#正则模块重点>#</a></h3><ul><li><p>什么是正则表达式？</p><ul><li>正则表达式(Regular Expression)是一种文本模式，包括普通字符（例如，a 到 z 之间的字母）和特殊字符（例如，*，+，？等）。</li><li>正则表达式使用单个字符串来描述、匹配一系列匹配某个句法规则的字符串。</li></ul></li><li><p>常用的正则标识</p></li><li><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>单字符：
-</span></span><span class=line><span class=cl>    . : 除换行以外所有字符
-</span></span><span class=line><span class=cl>    [] ：[aoe] [a-w] 匹配集合中任意一个字符
-</span></span><span class=line><span class=cl>    \d ：数字  [0-9]
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>数量修饰：
-</span></span><span class=line><span class=cl>    * : 任意多次  &gt;=0
-</span></span><span class=line><span class=cl>    + : 至少1次   &gt;=1
-</span></span><span class=line><span class=cl>    ? : 可有可无  0次或者1次
-</span></span><span class=line><span class=cl>    {m} ：固定m次 hello{3,}
-</span></span><span class=line><span class=cl>    {m,} ：至少m次
-</span></span><span class=line><span class=cl>    {m,n} ：m-n次
-</span></span><span class=line><span class=cl>边界：
-</span></span><span class=line><span class=cl>    $ : 以某某结尾 
-</span></span><span class=line><span class=cl>    ^ : 以某某开头
-</span></span><span class=line><span class=cl>分组：
-</span></span><span class=line><span class=cl>		(ab)  
-</span></span><span class=line><span class=cl>命名分组：
-</span></span><span class=line><span class=cl>	  (?P&lt;name&gt;正则表达式)，name是一个合法的标识符
-</span></span><span class=line><span class=cl>贪婪模式： .*
-</span></span><span class=line><span class=cl>非贪婪（惰性）模式： .*?
-</span></span></code></pre></div></li><li><p>正则在python中的使用</p><ul><li><p>基于re模块进行正则匹配操作</p></li><li><p>主要使用re模块中的findall进行指定规则的匹配</p><ul><li>findall(str,rule)<ul><li>str表示即将进行匹配的原始字符串数据</li><li>rule表示指定规则的正则表达式</li><li>findall返回的是列表，列表中存储匹配到的指定内容</li></ul></li></ul></li><li><p>练习</p></li><li><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=kn>import</span> <span class=nn>re</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c1>#提取170</span>
-</span></span><span class=line><span class=cl><span class=n>string</span> <span class=o>=</span> <span class=s1>&#39;我喜欢身高为170的女孩&#39;</span>
-</span></span><span class=line><span class=cl><span class=n>ex</span> <span class=o>=</span> <span class=s1>&#39;\d+&#39;</span>
-</span></span><span class=line><span class=cl><span class=n>result</span> <span class=o>=</span> <span class=n>re</span><span class=o>.</span><span class=n>findall</span><span class=p>(</span><span class=n>ex</span><span class=p>,</span><span class=n>string</span><span class=p>)</span>
-</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>result</span><span class=p>[</span><span class=mi>0</span><span class=p>])</span>
-</span></span><span class=line><span class=cl><span class=c1>#####################################################################</span>
-</span></span><span class=line><span class=cl><span class=c1>#提取出http和https</span>
-</span></span><span class=line><span class=cl><span class=n>key</span><span class=o>=</span><span class=s1>&#39;http://www.baidu.com and https://boob.com&#39;</span>
-</span></span><span class=line><span class=cl><span class=n>ex</span> <span class=o>=</span> <span class=s1>&#39;https?&#39;</span>
-</span></span><span class=line><span class=cl><span class=n>result</span> <span class=o>=</span> <span class=n>re</span><span class=o>.</span><span class=n>findall</span><span class=p>(</span><span class=n>ex</span><span class=p>,</span><span class=n>key</span><span class=p>)</span>
-</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>result</span><span class=p>)</span>
-</span></span><span class=line><span class=cl><span class=c1>#####################################################################</span>
-</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>re</span>
-</span></span><span class=line><span class=cl><span class=c1>#提取出hello</span>
-</span></span><span class=line><span class=cl><span class=n>key</span><span class=o>=</span><span class=s1>&#39;lalala&lt;hTml&gt;hello&lt;/HtMl&gt;hahah&#39;</span>
-</span></span><span class=line><span class=cl><span class=n>ex</span> <span class=o>=</span> <span class=s1>&#39;&lt;hTml&gt;(.*)&lt;/HtMl&gt;&#39;</span>
-</span></span><span class=line><span class=cl><span class=n>result</span> <span class=o>=</span> <span class=n>re</span><span class=o>.</span><span class=n>findall</span><span class=p>(</span><span class=n>ex</span><span class=p>,</span><span class=n>key</span><span class=p>)</span>
-</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>result</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c1>#####################################################################</span>
-</span></span><span class=line><span class=cl><span class=c1>#提取出hit.</span>
-</span></span><span class=line><span class=cl><span class=n>key</span><span class=o>=</span><span class=s1>&#39;bobo@hit.edu.com&#39;</span><span class=c1>#想要匹配到hit.</span>
-</span></span><span class=line><span class=cl><span class=c1># ex = &#39;h.*\.&#39; #贪婪模式</span>
-</span></span><span class=line><span class=cl><span class=n>ex</span> <span class=o>=</span> <span class=s1>&#39;h.*?\.&#39;</span> <span class=c1>#？将正则的贪婪模式调整为非贪婪模式。默认下为贪婪模式</span>
-</span></span><span class=line><span class=cl><span class=n>result</span> <span class=o>=</span> <span class=n>re</span><span class=o>.</span><span class=n>findall</span><span class=p>(</span><span class=n>ex</span><span class=p>,</span><span class=n>key</span><span class=p>)</span>
-</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>result</span><span class=p>)</span>
-</span></span><span class=line><span class=cl><span class=c1>#####################################################################</span>
-</span></span><span class=line><span class=cl><span class=c1>#匹配sas和saas</span>
-</span></span><span class=line><span class=cl><span class=n>key</span><span class=o>=</span><span class=s1>&#39;saas and sas and saaas&#39;</span>
-</span></span><span class=line><span class=cl><span class=n>ex</span> <span class=o>=</span> <span class=s1>&#39;sa{1,2}s&#39;</span>
-</span></span><span class=line><span class=cl><span class=n>result</span> <span class=o>=</span> <span class=n>re</span><span class=o>.</span><span class=n>findall</span><span class=p>(</span><span class=n>ex</span><span class=p>,</span><span class=n>key</span><span class=p>)</span>
-</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>result</span><span class=p>)</span>
-</span></span><span class=line><span class=cl><span class=c1>#####################################################################</span>
-</span></span><span class=line><span class=cl><span class=n>key</span> <span class=o>=</span> <span class=s1>&#39;你好我的手机号是13222222222你记住了吗&#39;</span>
-</span></span><span class=line><span class=cl><span class=n>ex</span> <span class=o>=</span> <span class=s1>&#39;1[3,5,7,8,9]\d</span><span class=si>{9}</span><span class=s1>&#39;</span>
-</span></span><span class=line><span class=cl><span class=n>result</span> <span class=o>=</span> <span class=n>re</span><span class=o>.</span><span class=n>findall</span><span class=p>(</span><span class=n>ex</span><span class=p>,</span><span class=n>key</span><span class=p>)</span>
-</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>result</span><span class=p>)</span>
-</span></span><span class=line><span class=cl><span class=c1>#####################################################################</span>
-</span></span><span class=line><span class=cl><span class=c1>#提取ip和端口号</span>
-</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>re</span>
-</span></span><span class=line><span class=cl><span class=n>s</span> <span class=o>=</span> <span class=s2>&#34;my computer ip is &#39;230.192.168.78&#39;,and port is 8889 you got it?&#34;</span>
-</span></span><span class=line><span class=cl><span class=n>rep</span> <span class=o>=</span> <span class=n>re</span><span class=o>.</span><span class=n>search</span><span class=p>(</span><span class=sa>r</span><span class=s2>&#34;ip is &#39;(?P&lt;ip&gt;\d+\.\d+\.\d+\.\d+).* port is (?P&lt;port&gt;\d+)&#34;</span><span class=p>,</span><span class=n>s</span><span class=p>)</span>
-</span></span><span class=line><span class=cl><span class=n>rep</span><span class=o>.</span><span class=n>group</span><span class=p>(</span><span class=s1>&#39;ip&#39;</span><span class=p>),</span><span class=n>rep</span><span class=o>.</span><span class=n>group</span><span class=p>(</span><span class=s1>&#39;port&#39;</span><span class=p>)</span><span class=c1>#通过命名分组引用分组</span>
-</span></span></code></pre></div></li></ul></li></ul></div><div class=post-reward><div style=padding:0;margin:0;width:100%;font-size:16px;text-align:center><div id=QR style=opacity:0><div id=wechat style=display:inline-block><a class=fancybox rel=group><img id=wechat_qr src=https://canw0916.github.io/img/wxPay.jpg alt=wechat_pay></a><p>微信</p></div><div id=alipay style=display:inline-block><a class=fancybox rel=group><img id=alipay_qr src=https://canw0916.github.io/img/aliPay.jpg alt=alipay></a><p>支付宝</p></div></div><button id=rewardButton onclick='var qr=document.getElementById("QR");qr.style.opacity==="0"?qr.style.opacity="1":qr.style.opacity="0"'>
-<span>🧧 鼓励</span></button></div></div><footer class=post-footer><nav class=paginav><a class=prev href=https://canw0916.github.io/posts/tech/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/><span class=title>« 上一页</span><br><span>面向对象</span></a>
-<a class=next href=https://canw0916.github.io/posts/tech/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/><span class=title>下一页 »</span><br><span>文件操作</span></a></nav></footer></div><div><div class=pagination__title><span class=pagination__title-h style=font-size:20px>💬评论</span><hr></div><div id=tcomment></div><script src=https://utteranc.es/client.js repo=canw0916/utterances_comments issue-term=title theme=photon-dark crossorigin=anonymous async></script></div></article></main><script async src=https://unpkg.com/mermaid@8.8.1/dist/mermaid.min.js></script>
-<script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script><footer class=footer><span>Copyright
-&copy;
-2023-2023
-<a href=https://canw0916.github.io/ style=color:#939393>Felix's Blog</a>
-All Rights Reserved</span>
-<a href=https://beian.miit.gov.cn/ target=_blank style=color:#939393></a>&nbsp;
-<span><a target=_blank href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=null" style=display:inline-block;text-decoration:none;height:20px;color:#939393><img src style="float:left;margin:0 5px 0 0"></a></span>
-<span id=busuanzi_container><link rel=stylesheet href=//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css>总访客数: <span id=busuanzi_value_site_uv></span>
-总访问量: <span id=busuanzi_value_site_pv></span></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><span class=topInner><svg class="topSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg><span id=read_progress></span></span></a>
-<script>document.addEventListener("scroll",function(){const t=document.getElementById("read_progress"),n=document.documentElement.scrollHeight,s=document.documentElement.clientHeight,o=document.documentElement.scrollTop||document.body.scrollTop;t.innerText=((o/(n-s)).toFixed(2)*100).toFixed(0)})</script><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>let mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>400||document.documentElement.scrollTop>400?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerText="📄复制";function s(){t.innerText="👌🏻已复制!",setTimeout(()=>{t.innerText="📄复制"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){let t=e.textContent+`
-————————————————
-版权声明：本文为「Felix's Blog」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
-原文链接：`+location.href;navigator.clipboard.writeText(t),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild===n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName==="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script><script src=https://code.jquery.com/jquery-1.12.4.min.js></script>
-<script>$("code[class^=language] ").on("mouseover",function(){this.clientWidth<this.scrollWidth&&$(this).css("width","135%")}).on("mouseout",function(){$(this).css("width","100%")})</script></body></html>
+
+
+
+                &nbsp;&nbsp;🏷️ &nbsp;
+                <ul class="post-tags-meta">
+                    <a href="https://canw0916.github.io/tags/python/">python</a>
+                </ul>
+
+                
+                <span id="busuanzi_container_page_pv">
+                &nbsp; 🎯 <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+</div>
+        </header> 
+        <aside id="toc-container" class="toc-container wide">
+    <div class="toc">
+        <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">文章目录</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#%e6%a8%a1%e5%9d%97%e4%b8%8e%e5%8c%85" aria-label="模块与包">模块与包</a><ul>
+                        
+                <li>
+                    <a href="#%e6%a8%a1%e5%9d%97" aria-label="模块">模块</a><ul>
+                        
+                <li>
+                    <a href="#%e6%a8%a1%e5%9d%97%e4%bb%8b%e7%bb%8d" aria-label="模块介绍">模块介绍</a></li>
+                <li>
+                    <a href="#%e6%a8%a1%e5%9d%97%e5%af%bc%e5%85%a5" aria-label="模块导入">模块导入</a></li>
+                <li>
+                    <a href="#__name__-" aria-label="__name__ "><code>__name__ </code></a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e5%8c%85" aria-label="包">包</a><ul>
+                        
+                <li>
+                    <a href="#%e4%bb%80%e4%b9%88%e6%98%af%e5%8c%85" aria-label="什么是包">什么是包</a></li>
+                <li>
+                    <a href="#%e5%af%bc%e5%85%a5%e5%8c%85%e7%9a%84%e8%af%ad%e6%b3%95" aria-label="导入包的语法">导入包的语法</a></li></ul>
+                </li></ul>
+                </li>
+                <li>
+                    <a href="#%e5%b8%b8%e8%a7%81%e6%a8%a1%e5%9d%97" aria-label="常见模块">常见模块</a><ul>
+                        
+                <li>
+                    <a href="#time%e6%a8%a1%e5%9d%97" aria-label="time模块">time模块</a></li>
+                <li>
+                    <a href="#random%e6%a8%a1%e5%9d%97" aria-label="random模块">random模块</a></li>
+                <li>
+                    <a href="#os%e6%a8%a1%e5%9d%97" aria-label="os模块">os模块</a></li>
+                <li>
+                    <a href="#%e5%ba%8f%e5%88%97%e5%8c%96%e6%a8%a1%e5%9d%97json%e9%87%8d%e7%82%b9" aria-label="序列化模块：json（重点）">序列化模块：json（重点）</a></li>
+                <li>
+                    <a href="#%e6%ad%a3%e5%88%99%e6%a8%a1%e5%9d%97%e9%87%8d%e7%82%b9" aria-label="正则模块（重点）">正则模块（重点）</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+        </details>
+    </div>
+</aside>
+<script>
+    let activeElement;
+    let elements;
+    window.addEventListener('DOMContentLoaded', function (event) {
+        checkTocPosition();
+
+        elements = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]');
+        
+        activeElement = elements[0];
+        const id = encodeURI(activeElement.getAttribute('id')).toLowerCase();
+        document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+    }, false);
+
+    window.addEventListener('resize', function(event) {
+        checkTocPosition();
+    }, false);
+
+    window.addEventListener('scroll', () => {
+        
+        activeElement = Array.from(elements).find((element) => {
+            if ((getOffsetTop(element) - window.pageYOffset) > 0 &&
+                (getOffsetTop(element) - window.pageYOffset) < window.innerHeight/2) {
+                return element;
+            }
+        }) || activeElement
+
+        elements.forEach(element => {
+            const id = encodeURI(element.getAttribute('id')).toLowerCase();
+            if (element === activeElement){
+                document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+            } else {
+                document.querySelector(`.inner ul li a[href="#${id}"]`).classList.remove('active');
+            }
+        })
+    }, false);
+
+    const main = parseInt(getComputedStyle(document.body).getPropertyValue('--article-width'), 10);
+    const toc = parseInt(getComputedStyle(document.body).getPropertyValue('--toc-width'), 10);
+    const gap = parseInt(getComputedStyle(document.body).getPropertyValue('--gap'), 10);
+
+    function checkTocPosition() {
+        const width = document.body.scrollWidth;
+
+        if (width - main - (toc * 2) - (gap * 4) > 0) {
+            document.getElementById("toc-container").classList.add("wide");
+        } else {
+            document.getElementById("toc-container").classList.remove("wide");
+        }
+    }
+
+    function getOffsetTop(element) {
+        if (!element.getClientRects().length) {
+            return 0;
+        }
+        let rect = element.getBoundingClientRect();
+        let win = element.ownerDocument.defaultView;
+        return rect.top + win.pageYOffset;
+    }
+</script>
+        
+        <div class="post-content"><h2 id="模块与包">模块与包<a hidden class="anchor" aria-hidden="true" href="#模块与包">#</a></h2>
+<h3 id="模块">模块<a hidden class="anchor" aria-hidden="true" href="#模块">#</a></h3>
+<h4 id="模块介绍">模块介绍<a hidden class="anchor" aria-hidden="true" href="#模块介绍">#</a></h4>
+<p>在计算机程序的开发过程中，随着程序代码越写越多，在一个文件里代码就会越来越长，越来越不容易维护。</p>
+<p>为了编写可维护的代码，我们把很多函数分组，分别放到不同的文件里，这样，每个文件包含的代码就相对较少，很多编程语言都采用这种组织代码的方式。而这样的一个<code>py</code>文件在Python中称为模块（Module）。</p>
+<p>模块是组织代码的更高级形式，大大提高了代码的阅读性和可维护性。</p>
+<p>模块一共四种：</p>
+<ul>
+<li>解释器内建模块</li>
+<li>python标准库</li>
+<li>第三方模块</li>
+<li>应用程序自定义模块</li>
+</ul>
+<p>另外，使用模块还可以避免函数名和变量名冲突。相同名字的函数和变量完全可以分别存在不同的模块中，因此，我们自己在编写模块时，不必考虑名字会与其他模块冲突。</p>
+<h4 id="模块导入">模块导入<a hidden class="anchor" aria-hidden="true" href="#模块导入">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="s1">&#39;&#39;&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s1"># 方式1：导入一个模块
+</span></span></span><span class="line"><span class="cl"><span class="s1">import 模块名
+</span></span></span><span class="line"><span class="cl"><span class="s1">import 模块名 as 别名
+</span></span></span><span class="line"><span class="cl"><span class="s1">
+</span></span></span><span class="line"><span class="cl"><span class="s1"># 方式2：导入多个模块
+</span></span></span><span class="line"><span class="cl"><span class="s1">import (
+</span></span></span><span class="line"><span class="cl"><span class="s1">   模块1
+</span></span></span><span class="line"><span class="cl"><span class="s1">   模块2 
+</span></span></span><span class="line"><span class="cl"><span class="s1">   )
+</span></span></span><span class="line"><span class="cl"><span class="s1">
+</span></span></span><span class="line"><span class="cl"><span class="s1">import 模块1,模块2
+</span></span></span><span class="line"><span class="cl"><span class="s1">
+</span></span></span><span class="line"><span class="cl"><span class="s1"># 方式3：导入成员变量
+</span></span></span><span class="line"><span class="cl"><span class="s1">from 模块名 import 成员变量
+</span></span></span><span class="line"><span class="cl"><span class="s1">from 模块名 import *
+</span></span></span><span class="line"><span class="cl"><span class="s1">&#39;&#39;&#39;</span>
+</span></span></code></pre></div><blockquote>
+<p>导入模块时会执行模块，多次导入只执行一次。</p>
+</blockquote>
+<p>案例：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">cal</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl"><span class="n">logger</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl"><span class="n">main</span><span class="o">.</span><span class="n">py</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1">#cal.py</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">mul</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;这是cal模块文件&#39;</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1">#logger.py</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">get_logger</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;打印日志！&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;这是logger模块文件&#39;</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1">#main.py</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">cal</span> <span class="c1">#导入了cal模块</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">logger</span> <span class="c1">#导入和logger模块</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#注意：import导入模块，就好比是将模块中的代码执行了</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">cal</span> <span class="kn">import</span> <span class="n">mul</span> <span class="c1">#将cal模块中的mul成员进行导入</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#调用用了cal模块中的add函数</span>
+</span></span><span class="line"><span class="cl"><span class="n">result</span> <span class="o">=</span> <span class="n">cal</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">c</span> <span class="o">=</span> <span class="n">mul</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#调用了logger模块中的get_logger函数</span>
+</span></span><span class="line"><span class="cl"><span class="n">logger</span><span class="o">.</span><span class="n">get_logger</span><span class="p">()</span>
+</span></span></code></pre></div><ul>
+<li>注意：执行源文件的名字一定不要和模块的名字同名</li>
+</ul>
+<h4 id="__name__-"><code>__name__ </code><a hidden class="anchor" aria-hidden="true" href="#__name__-">#</a></h4>
+<p><code>__name__</code>是python内置变量，存储的是当前模块名称。</p>
+<p>对于很多编程语言来说，程序都必须要有一个入口。像C，C++都有一个main函数作为程序的入口，而Python作为解释性脚本语言，没有一个统一的入口，因为Python程序运行时是从模块顶行开始，逐行进行翻译执行，所以，最顶层（没有被缩进）的代码都会被执行，所以Python中并不需要一个统一的main()作为程序的入口。</p>
+<p>在刚才的案例中三个模块都打印一次<code>__name__</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1">#cal.py</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">mul</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;这是cal模块文件,__name__内置变量的值为：&#39;</span><span class="p">,</span><span class="vm">__name__</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#logger.py</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">get_logger</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;打印日志！&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;这是logger模块文件,__name__内置变量的值为：&#39;</span><span class="p">,</span><span class="vm">__name__</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#main.py：作为执行文件</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">cal</span> <span class="c1">#导入了cal模块</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">logger</span> <span class="c1">#导入和logger模块</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;main文件的__name__这个内置变量为：&#39;</span><span class="p">,</span><span class="vm">__name__</span><span class="p">)</span>
+</span></span></code></pre></div><p>结果为：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">这是cal模块文件</span><span class="p">,</span><span class="n">__name__内置变量的值为</span><span class="err">：</span> <span class="n">cal</span>
+</span></span><span class="line"><span class="cl"><span class="n">这是logger模块文件</span><span class="p">,</span><span class="n">__name__内置变量的值为</span><span class="err">：</span> <span class="n">logger</span>
+</span></span><span class="line"><span class="cl"><span class="n">main文件的__name__这个内置变量为</span><span class="err">：</span> <span class="n">__main__</span>
+</span></span></code></pre></div><p>通过结果发现<code>__name__</code>只有在执行模块中打印<code>__main__</code>,在其他导入模块中打印各自模块的名称。</p>
+<p>所以，<code>__name__</code>可以有以下作用：</p>
+<ul>
+<li>利用<code>__name__==&quot;__main__&quot;</code>声明程序入口。</li>
+<li>可以对导入的模块进行功能测试</li>
+</ul>
+<h3 id="包">包<a hidden class="anchor" aria-hidden="true" href="#包">#</a></h3>
+<h4 id="什么是包">什么是包<a hidden class="anchor" aria-hidden="true" href="#什么是包">#</a></h4>
+<p>当一个项目中模块越来越多，维护和开发不是那么高效的时候，我们可以引入一种比模块更高级语法：包。</p>
+<p>包是对相关功能的模块<code>py</code>文件的组织方式。</p>
+<p>包可以理解为文件夹，更确切的说，是一个包含<code>__init__</code>文件的文件夹。</p>
+<h4 id="导入包的语法">导入包的语法<a hidden class="anchor" aria-hidden="true" href="#导入包的语法">#</a></h4>
+<ol>
+<li><code>import 包名[.模块名 [as 别名]]</code></li>
+<li><code>from 包名 import 模块名 [as 别名]</code></li>
+<li><code>from 包名.模块名 import 成员名 [as 别名]</code></li>
+</ol>
+<p>案例：将上面案例中的<code>cal .py</code>文件放到<code>utils</code>包中管理，<code>logger.py</code>放到<code>logger</code>包中管理。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">-- demo
+</span></span><span class="line"><span class="cl">   main.py  #执行文件
+</span></span><span class="line"><span class="cl">   -- m_log #包
+</span></span><span class="line"><span class="cl">   		__init__.py
+</span></span><span class="line"><span class="cl">      logger.py #存储在logger包中的一个模块
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">m_log</span> <span class="kn">import</span> <span class="n">logger</span>
+</span></span><span class="line"><span class="cl"><span class="n">logger</span><span class="o">.</span><span class="n">get_logger</span><span class="p">()</span> <span class="c1">#调用了logger模块中的get_logger函数</span>
+</span></span></code></pre></div><h2 id="常见模块">常见模块<a hidden class="anchor" aria-hidden="true" href="#常见模块">#</a></h2>
+<h3 id="time模块">time模块<a hidden class="anchor" aria-hidden="true" href="#time模块">#</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># &lt;1&gt; 时间戳</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">time</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>     
+</span></span><span class="line"><span class="cl"><span class="mf">1493136727.099066</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># &lt;2&gt; 时间字符串</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&#34;%Y-%m-</span><span class="si">%d</span><span class="s2"> </span><span class="si">%X</span><span class="s2">&#34;</span><span class="p">)</span> <span class="c1">#%Y:年 %m：月 %d：天 %X:时分秒</span>
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;2017-04-26 00:32:18&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#&lt;3&gt; 程序暂定固定的时间</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">time</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;正在下载数据......&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c1">#程序暂定n秒</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;下载成功！&#39;</span><span class="p">)</span>
+</span></span></code></pre></div><p>小结：时间戳是计算机能够识别的时间；时间字符串是人能够看懂的时间；元组则是用来操作时间的</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">time</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#计算一组程序执行的耗时</span>
+</span></span><span class="line"><span class="cl"><span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#测试代码</span>
+</span></span><span class="line"><span class="cl"><span class="n">num</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10000000</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">num</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">##############################</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;总耗时：&#39;</span><span class="p">,</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="o">-</span><span class="n">start</span><span class="p">)</span>
+</span></span></code></pre></div><h3 id="random模块">random模块<a hidden class="anchor" aria-hidden="true" href="#random模块">#</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">random</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>      <span class="c1"># 大于0且小于1之间的小数</span>
+</span></span><span class="line"><span class="cl"><span class="mf">0.7664338663654585</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># 大于等于1且小于等于5之间的整数</span>
+</span></span><span class="line"><span class="cl"><span class="mi">2</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="c1"># 大于等于1且小于3之间的整数</span>
+</span></span><span class="line"><span class="cl"><span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;23&#39;</span><span class="p">,[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]])</span>  <span class="c1"># 返回列表中的随机一个元素</span>
+</span></span><span class="line"><span class="cl"><span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;23&#39;</span><span class="p">,[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]],</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># 列表元素任意2个随机组合</span>
+</span></span><span class="line"><span class="cl"><span class="p">[[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="s1">&#39;23&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="c1">#大于1小于3的小数</span>
+</span></span><span class="line"><span class="cl"><span class="mf">1.6270147180533838</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">item</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">9</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="c1"># 直接将原来的列表元素打乱次序，不会返回一个新列表</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">item</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+</span></span></code></pre></div><h3 id="os模块">os模块<a hidden class="anchor" aria-hidden="true" href="#os模块">#</a></h3>
+<p>os模块是与操作系统交互的一个接口</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">os</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span> <span class="c1"># 获取当前工作目录，即当前python脚本工作的目录路径</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s2">&#34;dirname&#34;</span><span class="p">)</span>  <span class="c1"># 改变当前脚本工作目录；相当于shell下cd</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">curdir</span>   <span class="c1"># 返回当前目录: (&#39;.&#39;)</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">pardir</span>  <span class="c1"># 获取当前目录的父目录字符串名：(&#39;..&#39;)</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="s1">&#39;dirname1/dirname2&#39;</span><span class="p">)</span>   <span class="c1"># ***可生成多层递归目录</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">removedirs</span><span class="p">(</span><span class="s1">&#39;dirname1&#39;</span><span class="p">)</span>    <span class="c1"># ***若目录为空，则删除，并递归到上一级目录，如若也为空，则删除，依此类推</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s1">&#39;dirname&#39;</span><span class="p">)</span>    <span class="c1">#*** 生成单级目录；相当于shell中mkdir dirname</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">rmdir</span><span class="p">(</span><span class="s1">&#39;dirname&#39;</span><span class="p">)</span>    <span class="c1"># *** 删除单级空目录，若目录不为空则无法删除，报错；相当于shell中rmdir dirname</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s1">&#39;dirname&#39;</span><span class="p">)</span>    <span class="c1"># ***列出指定目录下的所有文件和子目录，包括隐藏文件，并以列表方式打印</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>  <span class="c1">#*** 删除一个文件</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s2">&#34;oldname&#34;</span><span class="p">,</span><span class="s2">&#34;newname&#34;</span><span class="p">)</span>  <span class="c1">#*** 重命名文件/目录</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">stat</span><span class="p">(</span><span class="s1">&#39;path/filename&#39;</span><span class="p">)</span> <span class="c1">#  获取文件/目录信息</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">sep</span>    <span class="c1"># 输出操作系统特定的路径分隔符，win下为&#34;\\&#34;,Linux下为&#34;/&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">linesep</span>    <span class="c1"># 输出当前平台使用的行终止符，win下为&#34;\t\n&#34;,Linux下为&#34;\n&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">pathsep</span>    <span class="c1"># 输出用于分割文件路径的字符串 win下为;,Linux下为:</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">name</span>    <span class="c1"># 输出字符串指示当前使用平台。win-&gt;&#39;nt&#39;; Linux-&gt;&#39;posix&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&#34;bash command&#34;</span><span class="p">)</span>  <span class="c1"># 运行shell命令，直接显示</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">environ</span>  <span class="c1"># 获取系统环境变量</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>  <span class="c1"># ***返回path规范化的绝对路径</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>  <span class="c1"># 将path分割成目录和文件名二元组返回</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>  <span class="c1"># 返回path的目录。其实就是os.path.split(path)的第一个元素</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="c1">#  返回path最后的文件名。如何path以／或\结尾，那么就会返回空值。即os.path.split(path)的第二个元素</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="c1">#  ***如果path存在，返回True；如果path不存在，返回False</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isabs</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>  <span class="c1"># 如果path是绝对路径，返回True</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>  <span class="c1"># ***如果path是一个存在的文件，返回True。否则返回False</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>  <span class="c1"># ***如果path是一个存在的目录，则返回True。否则返回False</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path1</span><span class="p">[,</span> <span class="n">path2</span><span class="p">[,</span> <span class="o">...</span><span class="p">]])</span>  <span class="c1"># 将多个路径组合后返回，第一个绝对路径之前的参数将被忽略</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getatime</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>  <span class="c1"># 返回path所指向的文件或者目录的最后访问时间</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getmtime</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>  <span class="c1"># 返回path所指向的文件或者目录的最后修改时间</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getsize</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="c1"># ***返回path的大小</span>
+</span></span></code></pre></div><h3 id="序列化模块json重点">序列化模块：json（重点）<a hidden class="anchor" aria-hidden="true" href="#序列化模块json重点">#</a></h3>
+<blockquote>
+<p>序列化： 将python中的字典，列表对象转换成指定形式字符串</p>
+<p>反序列化：将指定格式的字符串转换成字典，列表对象</p>
+</blockquote>
+<ul>
+<li>
+<p>基本使用</p>
+</li>
+<li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">json</span>
+</span></span><span class="line"><span class="cl"><span class="n">dic</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;hobby&#39;</span><span class="p">:[</span><span class="s1">&#39;football&#39;</span><span class="p">,</span><span class="s1">&#39;pingpang&#39;</span><span class="p">,</span><span class="s1">&#39;smoke&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;age&#39;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;score&#39;</span><span class="p">:</span><span class="mf">97.6</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="s1">&#39;zhangsan&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#序列化：将字典对象转换成了json格式的字符串</span>
+</span></span><span class="line"><span class="cl"><span class="n">r</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">dic</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">json</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;{&#34;hobby&#34;: [&#34;football&#34;, &#34;pingpang&#34;, &#34;smoke&#34;], &#34;age&#34;: 20, &#34;score&#34;: 97.6, &#34;name&#34;: &#34;zhangsan&#34;}&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#反序列化：将字符串转换成了字典对象</span>
+</span></span><span class="line"><span class="cl"><span class="n">dic</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">dic</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1">#持久化存储字典</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">json</span>
+</span></span><span class="line"><span class="cl"><span class="n">dic</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;hobby&#39;</span><span class="p">:[</span><span class="s1">&#39;football&#39;</span><span class="p">,</span><span class="s1">&#39;pingpang&#39;</span><span class="p">,</span><span class="s1">&#39;smoke&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;age&#39;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;score&#39;</span><span class="p">:</span><span class="mf">97.6</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="s1">&#39;zhangsan&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">fp</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;./dic.json&#39;</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#dump首先将dic字典进行序列化，然后将序列化后的结果写入到了fp表示的文件中</span>
+</span></span><span class="line"><span class="cl"><span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">dic</span><span class="p">,</span><span class="n">fp</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">fp</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">json</span>
+</span></span><span class="line"><span class="cl"><span class="n">fp</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;./dic.json&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#load将文件中的字符串数据进行读取，且将其转换成字典类型</span>
+</span></span><span class="line"><span class="cl"><span class="n">dic</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fp</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">dic</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">fp</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span></code></pre></div></li>
+</ul>
+<h3 id="正则模块重点">正则模块（重点）<a hidden class="anchor" aria-hidden="true" href="#正则模块重点">#</a></h3>
+<ul>
+<li>
+<p>什么是正则表达式？</p>
+<ul>
+<li>正则表达式(Regular Expression)是一种文本模式，包括普通字符（例如，a 到 z 之间的字母）和特殊字符（例如，*，+，？等）。</li>
+<li>正则表达式使用单个字符串来描述、匹配一系列匹配某个句法规则的字符串。</li>
+</ul>
+</li>
+<li>
+<p>常用的正则标识</p>
+</li>
+<li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">单字符：
+</span></span><span class="line"><span class="cl">    . : 除换行以外所有字符
+</span></span><span class="line"><span class="cl">    [] ：[aoe] [a-w] 匹配集合中任意一个字符
+</span></span><span class="line"><span class="cl">    \d ：数字  [0-9]
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">数量修饰：
+</span></span><span class="line"><span class="cl">    * : 任意多次  &gt;=0
+</span></span><span class="line"><span class="cl">    + : 至少1次   &gt;=1
+</span></span><span class="line"><span class="cl">    ? : 可有可无  0次或者1次
+</span></span><span class="line"><span class="cl">    {m} ：固定m次 hello{3,}
+</span></span><span class="line"><span class="cl">    {m,} ：至少m次
+</span></span><span class="line"><span class="cl">    {m,n} ：m-n次
+</span></span><span class="line"><span class="cl">边界：
+</span></span><span class="line"><span class="cl">    $ : 以某某结尾 
+</span></span><span class="line"><span class="cl">    ^ : 以某某开头
+</span></span><span class="line"><span class="cl">分组：
+</span></span><span class="line"><span class="cl">		(ab)  
+</span></span><span class="line"><span class="cl">命名分组：
+</span></span><span class="line"><span class="cl">	  (?P&lt;name&gt;正则表达式)，name是一个合法的标识符
+</span></span><span class="line"><span class="cl">贪婪模式： .*
+</span></span><span class="line"><span class="cl">非贪婪（惰性）模式： .*?
+</span></span></code></pre></div></li>
+<li>
+<p>正则在python中的使用</p>
+<ul>
+<li>
+<p>基于re模块进行正则匹配操作</p>
+</li>
+<li>
+<p>主要使用re模块中的findall进行指定规则的匹配</p>
+<ul>
+<li>findall(str,rule)
+<ul>
+<li>str表示即将进行匹配的原始字符串数据</li>
+<li>rule表示指定规则的正则表达式</li>
+<li>findall返回的是列表，列表中存储匹配到的指定内容</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>练习</p>
+</li>
+<li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">re</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#提取170</span>
+</span></span><span class="line"><span class="cl"><span class="n">string</span> <span class="o">=</span> <span class="s1">&#39;我喜欢身高为170的女孩&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">ex</span> <span class="o">=</span> <span class="s1">&#39;\d+&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">result</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">ex</span><span class="p">,</span><span class="n">string</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#####################################################################</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#提取出http和https</span>
+</span></span><span class="line"><span class="cl"><span class="n">key</span><span class="o">=</span><span class="s1">&#39;http://www.baidu.com and https://boob.com&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">ex</span> <span class="o">=</span> <span class="s1">&#39;https?&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">result</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">ex</span><span class="p">,</span><span class="n">key</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#####################################################################</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">re</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#提取出hello</span>
+</span></span><span class="line"><span class="cl"><span class="n">key</span><span class="o">=</span><span class="s1">&#39;lalala&lt;hTml&gt;hello&lt;/HtMl&gt;hahah&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">ex</span> <span class="o">=</span> <span class="s1">&#39;&lt;hTml&gt;(.*)&lt;/HtMl&gt;&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">result</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">ex</span><span class="p">,</span><span class="n">key</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#####################################################################</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#提取出hit.</span>
+</span></span><span class="line"><span class="cl"><span class="n">key</span><span class="o">=</span><span class="s1">&#39;bobo@hit.edu.com&#39;</span><span class="c1">#想要匹配到hit.</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ex = &#39;h.*\.&#39; #贪婪模式</span>
+</span></span><span class="line"><span class="cl"><span class="n">ex</span> <span class="o">=</span> <span class="s1">&#39;h.*?\.&#39;</span> <span class="c1">#？将正则的贪婪模式调整为非贪婪模式。默认下为贪婪模式</span>
+</span></span><span class="line"><span class="cl"><span class="n">result</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">ex</span><span class="p">,</span><span class="n">key</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#####################################################################</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#匹配sas和saas</span>
+</span></span><span class="line"><span class="cl"><span class="n">key</span><span class="o">=</span><span class="s1">&#39;saas and sas and saaas&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">ex</span> <span class="o">=</span> <span class="s1">&#39;sa{1,2}s&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">result</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">ex</span><span class="p">,</span><span class="n">key</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#####################################################################</span>
+</span></span><span class="line"><span class="cl"><span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;你好我的手机号是13222222222你记住了吗&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">ex</span> <span class="o">=</span> <span class="s1">&#39;1[3,5,7,8,9]\d</span><span class="si">{9}</span><span class="s1">&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">result</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">ex</span><span class="p">,</span><span class="n">key</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#####################################################################</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#提取ip和端口号</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">re</span>
+</span></span><span class="line"><span class="cl"><span class="n">s</span> <span class="o">=</span> <span class="s2">&#34;my computer ip is &#39;230.192.168.78&#39;,and port is 8889 you got it?&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">rep</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&#34;ip is &#39;(?P&lt;ip&gt;\d+\.\d+\.\d+\.\d+).* port is (?P&lt;port&gt;\d+)&#34;</span><span class="p">,</span><span class="n">s</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">rep</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s1">&#39;ip&#39;</span><span class="p">),</span><span class="n">rep</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s1">&#39;port&#39;</span><span class="p">)</span><span class="c1">#通过命名分组引用分组</span>
+</span></span></code></pre></div></li>
+</ul>
+</li>
+</ul>
+
+
+        </div>
+        <div class="post-reward">
+            <div style="padding: 0 0 0 0; margin: 0 0 0 0; width: 100%; font-size:16px; text-align: center;">
+                <div id="QR" style="opacity: 0;">
+                    <div id="wechat" style="display: inline-block">
+                        <a class="fancybox" rel="group">
+                            <img id="wechat_qr" src="https://canw0916.github.io/img/wxPay.jpg" alt="wechat_pay"></a>
+                        <p>微信</p>
+                    </div>
+                    <div id="alipay" style="display: inline-block">
+                        <a class="fancybox" rel="group">
+                            <img id="alipay_qr" src="https://canw0916.github.io/img/aliPay.jpg" alt="alipay"></a>
+                        <p>支付宝</p>
+                    </div>
+                </div>
+                <button id="rewardButton"
+                        onclick="
+                    var qr = document.getElementById('QR');
+                    if (qr.style.opacity === '0') {
+                        qr.style.opacity='1';
+                    } else {
+                      qr.style.opacity='0'
+                    }"
+                >
+                    <span>🧧 鼓励</span>
+                </button>
+            </div>
+        </div>
+
+        <footer class="post-footer">
+            
+<nav class="paginav">
+  <a class="prev" href="https://canw0916.github.io/posts/tech/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">
+    <span class="title">« 上一页</span>
+    <br>
+    <span>面向对象</span>
+  </a>
+  <a class="next" href="https://canw0916.github.io/posts/tech/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/">
+    <span class="title">下一页 »</span>
+    <br>
+    <span>文件操作</span>
+  </a>
+</nav>
+
+        </footer>
+    </div>
+
+
+
+<div>
+    <div class="pagination__title">
+        <span class="pagination__title-h" style="font-size: 20px;">💬评论</span>
+        <hr>
+    </div>
+    <div id="tcomment"></div>
+    <script src="https://utteranc.es/client.js"
+        repo="canw0916/utterances_comments"
+        issue-term="title"
+        theme="photon-dark"
+        crossorigin="anonymous"
+        async>
+    </script>
+</div>
+</article>
+</main>
+
+
+<script async src="https://unpkg.com/mermaid@8.8.1/dist/mermaid.min.js"></script>
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<footer class="footer">
+    <span>
+        Copyright
+        &copy;
+        2023-2023
+        <a href="https://canw0916.github.io/" style="color:#939393;">Felix&#39;s Blog</a>
+        All Rights Reserved
+    </span>
+
+    <a href="https://beian.miit.gov.cn/" target="_blank" style="color:#939393;"></a>&nbsp;
+
+    <span>
+        <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=null"
+           style="display:inline-block;text-decoration:none;height:20px;color:#939393;">
+            <img src="" style="float:left;margin: 0px 5px 0px 0px;"/>
+            
+        </a>
+    </span>
+
+    <span id="busuanzi_container">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        总访客数: <span id="busuanzi_value_site_uv"></span>
+        总访问量: <span id="busuanzi_value_site_pv"></span>
+    </span>
+
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <span class="topInner">
+        <svg class="topSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+            <path d="M12 6H0l6-6z"/>
+        </svg>
+        <span id="read_progress"></span>
+    </span>
+</a>
+
+<script>
+    document.addEventListener('scroll', function (e) {
+        const readProgress = document.getElementById("read_progress");
+        const scrollHeight = document.documentElement.scrollHeight;
+        const clientHeight = document.documentElement.clientHeight;
+        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        
+        readProgress.innerText = ((scrollTop / (scrollHeight - clientHeight)).toFixed(2) * 100).toFixed(0);
+    })
+</script>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    let mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = '📄复制';
+
+        function copyingDone() {
+            copybutton.innerText = '👌🏻已复制!';
+            setTimeout(() => {
+                copybutton.innerText = '📄复制';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                let text = codeblock.textContent +
+                    '\r\n————————————————\r\n' +
+                    '版权声明：本文为「' + "Felix's Blog"
+                +'」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。' +
+                '\r\n原文链接：' + location.href;
+                navigator.clipboard.writeText(text);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) {
+            }
+            ;
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild === container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName === "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script>
+    $("code[class^=language] ").on("mouseover", function () {
+        if (this.clientWidth < this.scrollWidth) {
+            $(this).css("width", "135%")
+        }
+    }).on("mouseout", function () {
+        $(this).css("width", "100%")
+    })
+</script>
+</body>
+
+</html>

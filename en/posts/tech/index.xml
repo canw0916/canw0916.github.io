@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>👨🏻‍💻 技术 on Felix&#39;s Blog</title>
+    <link>https://canw0916.github.io/en/posts/tech/</link>
+    <description>Recent content in 👨🏻‍💻 技术 on Felix&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 10 Feb 2023 15:08:28 +0800</lastBuildDate><atom:link href="https://canw0916.github.io/en/posts/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Scrapy框架</title>
+      <link>https://canw0916.github.io/en/posts/tech/scrapy%E6%A1%86%E6%9E%B6/</link>
+      <pubDate>Fri, 10 Feb 2023 15:08:28 +0800</pubDate>
+      
+      <guid>https://canw0916.github.io/en/posts/tech/scrapy%E6%A1%86%E6%9E%B6/</guid>
+      <description>简介 什么是框架？ 所谓的框，其实说白了就是一个【项目的半成品】，该项目的半成品需要被集成了各种功能且具有较强的通用性。 Scrapy是一个为了爬</description>
+    </item>
+    
+    <item>
+      <title>MongoDB</title>
+      <link>https://canw0916.github.io/en/posts/tech/mongodb/</link>
+      <pubDate>Fri, 10 Feb 2023 14:57:56 +0800</pubDate>
+      
+      <guid>https://canw0916.github.io/en/posts/tech/mongodb/</guid>
+      <description>MongoDB数据存储 MongoDB是一个非关系型数据库(NoSQL). 非常适合超大数据集的存储, 由 C++ 语言编写,旨在为 WEB 应用提供可扩展的高性</description>
+    </item>
+    
+    <item>
+      <title>Redis</title>
+      <link>https://canw0916.github.io/en/posts/tech/redis/</link>
+      <pubDate>Fri, 10 Feb 2023 14:56:51 +0800</pubDate>
+      
+      <guid>https://canw0916.github.io/en/posts/tech/redis/</guid>
+      <description>redis基本使用 介绍： redis是一款非关系型数据库或者缓存数据库（性能最高的非关系型数据库之一），拥有每秒近十万次的读写能力。 安装&amp;am</description>
+    </item>
+    
+    <item>
+      <title>Mysql高级</title>
+      <link>https://canw0916.github.io/en/posts/tech/mysql%E9%AB%98%E7%BA%A7/</link>
+      <pubDate>Fri, 10 Feb 2023 14:55:06 +0800</pubDate>
+      
+      <guid>https://canw0916.github.io/en/posts/tech/mysql%E9%AB%98%E7%BA%A7/</guid>
+      <description>python操作链接数据库 pymysql模块:pip install pymysql 作用:可以实现使用python程序链接mysql数据库，且可以直接在python中执</description>
+    </item>
+    
+    <item>
+      <title>Mysql数据库</title>
+      <link>https://canw0916.github.io/en/posts/tech/mysql%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
+      <pubDate>Fri, 10 Feb 2023 14:23:09 +0800</pubDate>
+      
+      <guid>https://canw0916.github.io/en/posts/tech/mysql%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
+      <description>数据库概述 为什么要使用数据库？ 那我们在没有学习数据库的时候，数据存放在json或者磁盘文件中不也挺好的嘛，为啥还要学习数据库？ 文件中存储数据</description>
+    </item>
+    
+    <item>
+      <title>Selenium</title>
+      <link>https://canw0916.github.io/en/posts/tech/selenium/</link>
+      <pubDate>Fri, 10 Feb 2023 14:20:32 +0800</pubDate>
+      
+      <guid>https://canw0916.github.io/en/posts/tech/selenium/</guid>
+      <description>简介 selenium 是一种浏览器自动化的工具，所谓的自动化是指，我们可以通过代码的形式制定一系列的行为动作，然后执行代码，这些动作就会同步触发在浏览器中。</description>
+    </item>
+    
+    <item>
+      <title>M3U8流视频数据爬虫</title>
+      <link>https://canw0916.github.io/en/posts/tech/m3u8%E6%B5%81%E8%A7%86%E9%A2%91%E6%95%B0%E6%8D%AE%E7%88%AC%E8%99%AB/</link>
+      <pubDate>Fri, 10 Feb 2023 14:13:01 +0800</pubDate>
+      
+      <guid>https://canw0916.github.io/en/posts/tech/m3u8%E6%B5%81%E8%A7%86%E9%A2%91%E6%95%B0%E6%8D%AE%E7%88%AC%E8%99%AB/</guid>
+      <description>M3U8流视频数据爬虫 HLS技术介绍 现在大部分视频客户端都采用HTTP Live Streaming，而不是直接播放MP4等视频文件（HLS，Appl</description>
+    </item>
+    
+    <item>
+      <title>异步爬虫</title>
+      <link>https://canw0916.github.io/en/posts/tech/%E5%BC%82%E6%AD%A5%E7%88%AC%E8%99%AB/</link>
+      <pubDate>Fri, 10 Feb 2023 14:10:35 +0800</pubDate>
+      
+      <guid>https://canw0916.github.io/en/posts/tech/%E5%BC%82%E6%AD%A5%E7%88%AC%E8%99%AB/</guid>
+      <description>高性能异步爬虫 引入 很多同学对于异步这个概念只是停留在了“听说很NB”的认知层面上，很少有人能够在项目中真正的使用异步实现高性能的相关操作。接</description>
+    </item>
+    
+    <item>
+      <title>Requests高级</title>
+      <link>https://canw0916.github.io/en/posts/tech/requests%E9%AB%98%E7%BA%A7/</link>
+      <pubDate>Fri, 10 Feb 2023 14:04:30 +0800</pubDate>
+      
+      <guid>https://canw0916.github.io/en/posts/tech/requests%E9%AB%98%E7%BA%A7/</guid>
+      <description>简历模板下载拓展 import requests from lxml import etree import os headers = { &amp;#39;User-Agent&amp;#39;:&amp;#39;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.80 Safari/537.36&amp;#39;, } #创建一个新的文件夹 dirName = &amp;#39;jianli&amp;#39; if not os.path.exists(dirName): os.mkdir(dirName) #通用的url模板 url = &amp;#39;https://sc.chinaz.com/jianli/free_%d.html&amp;#39; for page in range(1,11): if page == 1:</description>
+    </item>
+    
+    <item>
+      <title>爬虫数据解析</title>
+      <link>https://canw0916.github.io/en/posts/tech/%E7%88%AC%E8%99%AB%E6%95%B0%E6%8D%AE%E8%A7%A3%E6%9E%90/</link>
+      <pubDate>Fri, 10 Feb 2023 13:57:02 +0800</pubDate>
+      
+      <guid>https://canw0916.github.io/en/posts/tech/%E7%88%AC%E8%99%AB%E6%95%B0%E6%8D%AE%E8%A7%A3%E6%9E%90/</guid>
+      <description>数据解析 何为数据解析 概念：就是将爬取到数据中局部的指定的数据进行提取 作用：实现聚焦爬虫 数据解析通用原理： html是用来展示数据，html中展</description>
+    </item>
+    
+    <item>
+      <title>Requests基础</title>
+      <link>https://canw0916.github.io/en/posts/tech/requests%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Fri, 10 Feb 2023 13:54:20 +0800</pubDate>
+      
+      <guid>https://canw0916.github.io/en/posts/tech/requests%E5%9F%BA%E7%A1%80/</guid>
+      <description>爬虫初始 为什么要学习爬虫 之前在授课过程中，好多同学都问过我这样的一个问题：为什么要学习爬虫，学习爬虫能够为我们以后的发展带来那些好处？其实学</description>
+    </item>
+    
+    <item>
+      <title>前端基础</title>
+      <link>https://canw0916.github.io/en/posts/tech/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Fri, 10 Feb 2023 13:41:15 +0800</pubDate>
+      
+      <guid>https://canw0916.github.io/en/posts/tech/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/</guid>
+      <description>强调：前端所有的内容是作为了解，不需要自己能够写出来！ 目的：大致看懂网页的页面源码 第1章 、Web的基本概念 软件开发的架构 目前我们了解常见应用</description>
+    </item>
+    
+    <item>
+      <title>并发编程</title>
+      <link>https://canw0916.github.io/en/posts/tech/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/</link>
+      <pubDate>Fri, 10 Feb 2023 11:58:11 +0800</pubDate>
+      
+      <guid>https://canw0916.github.io/en/posts/tech/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/</guid>
+      <description>并发编程（并发，并行，同步，异步） 通俗理解并发编程中的相关核心概念 核心概念：进程、线程和互斥锁 CPU的作用 计算机的核心是CPU，它承担了所有</description>
+    </item>
+    
+    <item>
+      <title>Python高级语法</title>
+      <link>https://canw0916.github.io/en/posts/tech/python%E9%AB%98%E7%BA%A7%E8%AF%AD%E6%B3%95/</link>
+      <pubDate>Fri, 10 Feb 2023 11:18:34 +0800</pubDate>
+      
+      <guid>https://canw0916.github.io/en/posts/tech/python%E9%AB%98%E7%BA%A7%E8%AF%AD%E6%B3%95/</guid>
+      <description>异常处理 首先我们要理解什么叫做&amp;quot;异常”？ 在程序运行过程中，总会遇到各种各样的问题和错误。 有些错误是我们编写代码时自己造成的： 比如语</description>
+    </item>
+    
+    <item>
+      <title>面向对象</title>
+      <link>https://canw0916.github.io/en/posts/tech/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</link>
+      <pubDate>Fri, 10 Feb 2023 11:12:31 +0800</pubDate>
+      
+      <guid>https://canw0916.github.io/en/posts/tech/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</guid>
+      <description>面向对象 面向过程VS面向对象 面向过程的程序设计的核心是过程（流水线式思维），过程即解决问题的步骤，面向过程的思想就好比是精心设计好一条流水线</description>
+    </item>
+    
+    <item>
+      <title>模块与包</title>
+      <link>https://canw0916.github.io/en/posts/tech/%E6%A8%A1%E5%9D%97%E4%B8%8E%E5%8C%85/</link>
+      <pubDate>Fri, 10 Feb 2023 11:06:06 +0800</pubDate>
+      
+      <guid>https://canw0916.github.io/en/posts/tech/%E6%A8%A1%E5%9D%97%E4%B8%8E%E5%8C%85/</guid>
+      <description>模块与包 模块 模块介绍 在计算机程序的开发过程中，随着程序代码越写越多，在一个文件里代码就会越来越长，越来越不容易维护。 为了编写可维护的代码，我</description>
+    </item>
+    
+    <item>
+      <title>文件操作</title>
+      <link>https://canw0916.github.io/en/posts/tech/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</link>
+      <pubDate>Fri, 10 Feb 2023 10:59:01 +0800</pubDate>
+      
+      <guid>https://canw0916.github.io/en/posts/tech/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</guid>
+      <description>文件操作 引言 到目前为止，我们做的一切操作，都是在内存里进行的，这样会有什么问题吗？如果一旦断电或发生意外关机了，那么你辛勤的工作成果将瞬间消</description>
+    </item>
+    
+    <item>
+      <title>作用域和函数</title>
+      <link>https://canw0916.github.io/en/posts/tech/%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%92%8C%E5%87%BD%E6%95%B0/</link>
+      <pubDate>Fri, 10 Feb 2023 10:56:40 +0800</pubDate>
+      
+      <guid>https://canw0916.github.io/en/posts/tech/%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%92%8C%E5%87%BD%E6%95%B0/</guid>
+      <description>变量的作用域 讲到了函数就必须介绍变量的作用域相关。 作用域指的是变量的有效范围。变量并不是在哪个位置都可以访问的，访问权限取决于这个变量是在哪</description>
+    </item>
+    
+    <item>
+      <title>函数基础</title>
+      <link>https://canw0916.github.io/en/posts/tech/%E5%87%BD%E6%95%B0%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Fri, 10 Feb 2023 10:52:22 +0800</pubDate>
+      
+      <guid>https://canw0916.github.io/en/posts/tech/%E5%87%BD%E6%95%B0%E5%9F%BA%E7%A1%80/</guid>
+      <description>函数 引言 什么是函数？ 前面在讲解Python数据类型的时候，我们已经接触过函数了。我们说，所谓的函数其实就是Python语言中的一种工具，基于</description>
+    </item>
+    
+    <item>
+      <title>流程控制</title>
+      <link>https://canw0916.github.io/en/posts/tech/%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/</link>
+      <pubDate>Fri, 10 Feb 2023 10:32:28 +0800</pubDate>
+      
+      <guid>https://canw0916.github.io/en/posts/tech/%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/</guid>
+      <description>流程控制 流程控制指的是代码运行逻辑、分支走向、循环控制，是真正体现程序执行顺序的操作。 程序是由语句构成，而流程控制语句 是用来控制程序中每条语</description>
+    </item>
+    
+    <item>
+      <title>重要数据类型</title>
+      <link>https://canw0916.github.io/en/posts/tech/%E9%87%8D%E8%A6%81%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
+      <pubDate>Fri, 10 Feb 2023 10:25:47 +0800</pubDate>
+      
+      <guid>https://canw0916.github.io/en/posts/tech/%E9%87%8D%E8%A6%81%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</guid>
+      <description>重要数据类型 列表数据类型 在实际开发中，经常需要将一组（不只一个）数据存储起来，以便后边的代码使用。列表就是这样的一个数据结构。且列表是Pyt</description>
+    </item>
+    
+    <item>
+      <title>基本数据类型</title>
+      <link>https://canw0916.github.io/en/posts/tech/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
+      <pubDate>Thu, 09 Feb 2023 15:34:59 +0800</pubDate>
+      
+      <guid>https://canw0916.github.io/en/posts/tech/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</guid>
+      <description>基本数据类型 引言 提问 前面我们说过，计算机的本质作用就是用来存储和运算二进制的数据。但是在实际应用中，我们看到计算机存储或者运算的数据并非只有</description>
+    </item>
+    
+    <item>
+      <title>运算符和输入输出</title>
+      <link>https://canw0916.github.io/en/posts/tech/%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/</link>
+      <pubDate>Thu, 09 Feb 2023 15:16:26 +0800</pubDate>
+      
+      <guid>https://canw0916.github.io/en/posts/tech/%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/</guid>
+      <description>运算符 运算符：以1 + 2为例，1和2被称为操作数，“+” 称为运算符。 Python语言支持以下类型的运算符: 算术运算符 比较（关系）运算符 赋值运算</description>
+    </item>
+    
+    <item>
+      <title>Python的变量和常量</title>
+      <link>https://canw0916.github.io/en/posts/tech/python%E7%9A%84%E5%8F%98%E9%87%8F%E5%92%8C%E5%B8%B8%E9%87%8F/</link>
+      <pubDate>Thu, 09 Feb 2023 13:30:21 +0800</pubDate>
+      
+      <guid>https://canw0916.github.io/en/posts/tech/python%E7%9A%84%E5%8F%98%E9%87%8F%E5%92%8C%E5%B8%B8%E9%87%8F/</guid>
+      <description>变量&amp;amp;常量 思考：计算机的本质作用是什么？ 内存空间 计算机内存，我们可以将其想象成是一个容器，容器中装载的是即将被计算机运算或者处理的数</description>
+    </item>
+    
+  </channel>
+</rss>
