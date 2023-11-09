@@ -2,10 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://canw0916.github.io/en/posts/tech/</loc>
+    <loc>https://canw0916.github.io/en/tags/</loc>
     <lastmod>2023-02-10T15:08:28+08:00</lastmod>
   </url><url>
     <loc>https://canw0916.github.io/en/posts/</loc>
+    <lastmod>2023-02-10T15:08:28+08:00</lastmod>
+  </url><url>
+    <loc>https://canw0916.github.io/en/posts/tech/</loc>
     <lastmod>2023-02-10T15:08:28+08:00</lastmod>
   </url><url>
     <loc>https://canw0916.github.io/en/categories/</loc>
@@ -21,9 +24,6 @@
     <lastmod>2023-02-10T15:08:28+08:00</lastmod>
   </url><url>
     <loc>https://canw0916.github.io/en/categories/tech/</loc>
-    <lastmod>2023-02-10T15:08:28+08:00</lastmod>
-  </url><url>
-    <loc>https://canw0916.github.io/en/tags/</loc>
     <lastmod>2023-02-10T15:08:28+08:00</lastmod>
   </url><url>
     <loc>https://canw0916.github.io/en/posts/tech/mongodb/</loc>
@@ -134,13 +134,13 @@
     <loc>https://canw0916.github.io/en/posts/life/</loc>
     <lastmod>2022-05-05T00:18:15+08:00</lastmod>
   </url><url>
-    <loc>https://canw0916.github.io/en/posts/read/</loc>
+    <loc>https://canw0916.github.io/en/posts/languages/</loc>
     <lastmod>2022-05-05T00:18:06+08:00</lastmod>
   </url><url>
     <loc>https://canw0916.github.io/en/categories/read/</loc>
     <lastmod>2022-05-05T00:18:06+08:00</lastmod>
   </url><url>
-    <loc>https://canw0916.github.io/en/posts/read/%E4%B8%89%E4%BD%93/</loc>
+    <loc>https://canw0916.github.io/en/posts/languages/%E4%B8%89%E4%BD%93/</loc>
     <lastmod>2022-05-05T00:18:06+08:00</lastmod>
   </url><url>
     <loc>https://canw0916.github.io/en/links/</loc>
