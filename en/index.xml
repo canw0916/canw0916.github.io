@@ -6,7 +6,16 @@
     <description>Recent content on Felix&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 10 Feb 2023 15:08:28 +0800</lastBuildDate><atom:link href="https://canw0916.github.io/en/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 09 Nov 2023 20:25:07 +0800</lastBuildDate><atom:link href="https://canw0916.github.io/en/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Markdown快速入门</title>
+      <link>https://canw0916.github.io/en/posts/tech/markdown%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/</link>
+      <pubDate>Thu, 09 Nov 2023 20:25:07 +0800</pubDate>
+      
+      <guid>https://canw0916.github.io/en/posts/tech/markdown%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/</guid>
+      <description>markdown基本用法介绍</description>
+    </item>
+    
     <item>
       <title>Scrapy框架</title>
       <link>https://canw0916.github.io/en/posts/tech/scrapy%E6%A1%86%E6%9E%B6/</link>
