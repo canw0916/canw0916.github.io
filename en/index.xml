@@ -682,8 +682,7 @@
       <guid>https://canw0916.github.io/en/posts/tech/python%E7%9A%84%E5%8F%98%E9%87%8F%E5%92%8C%E5%B8%B8%E9%87%8F/</guid>
       <description>&lt;h3 id=&#34;变量常量&#34;&gt;变量&amp;amp;常量&lt;/h3&gt;
 &lt;blockquote&gt;
-&lt;p&gt;思考：计算机的本质作用是什么？&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;思考：计算机的本质作用是什么？&lt;/p&gt;&lt;/blockquote&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;内存空间&lt;/p&gt;
@@ -713,8 +712,7 @@
       
       <guid>https://canw0916.github.io/en/posts/life/%E5%90%8D%E4%BA%BA%E5%90%8D%E8%A8%80/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;Was mich nicht umbringt, macht mich stärker&lt;/em&gt;.      &amp;mdash;Friedrich Nietzsche&lt;/p&gt;
-&lt;/blockquote&gt;</description>
+&lt;p&gt;&lt;em&gt;Was mich nicht umbringt, macht mich stärker&lt;/em&gt;.      &amp;mdash;Friedrich Nietzsche&lt;/p&gt;&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -851,26 +849,26 @@
 &lt;table&gt;
   &lt;thead&gt;
       &lt;tr&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;&lt;/th&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;&lt;/th&gt;
+          &lt;th&gt;&lt;/th&gt;
+          &lt;th&gt;&lt;/th&gt;
       &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;名称：&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Sulv&amp;rsquo;s Blog&lt;/td&gt;
+          &lt;td&gt;名称：&lt;/td&gt;
+          &lt;td&gt;Sulv&amp;rsquo;s Blog&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;网址：&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;https://www.sulvblog.cn&#34;&gt;https://www.sulvblog.cn&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;网址：&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://www.sulvblog.cn&#34;&gt;https://www.sulvblog.cn&lt;/a&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;图标：&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;https://www.sulvblog.cn/img/Q.gif&#34;&gt;https://www.sulvblog.cn/img/Q.gif&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;图标：&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://www.sulvblog.cn/img/Q.gif&#34;&gt;https://www.sulvblog.cn/img/Q.gif&lt;/a&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;描述：&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;一个记录技术、阅读、生活的博客&lt;/td&gt;
+          &lt;td&gt;描述：&lt;/td&gt;
+          &lt;td&gt;一个记录技术、阅读、生活的博客&lt;/td&gt;
       &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
@@ -891,22 +889,22 @@
 &lt;table&gt;
   &lt;thead&gt;
       &lt;tr&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;&lt;/th&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;&lt;/th&gt;
+          &lt;th&gt;&lt;/th&gt;
+          &lt;th&gt;&lt;/th&gt;
       &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;网名:&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Felix&lt;/td&gt;
+          &lt;td&gt;网名:&lt;/td&gt;
+          &lt;td&gt;Felix&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;职业:&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;黑厂打螺丝的&lt;/td&gt;
+          &lt;td&gt;职业:&lt;/td&gt;
+          &lt;td&gt;黑厂打螺丝的&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;运动:&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;跑步、网球、爬山&lt;/td&gt;
+          &lt;td&gt;运动:&lt;/td&gt;
+          &lt;td&gt;跑步、网球、爬山&lt;/td&gt;
       &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;</description>
