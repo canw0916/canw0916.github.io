@@ -183,8 +183,8 @@ C/S即：Client与Server ，中文意思：客户端与服务器端架构。
 </span></span></span><span class=line><span class=cl><span class=cm>height属性：指定引入图片的显示高度。
 </span></span></span><span class=line><span class=cl><span class=cm>border属性：指定引入图片的边框宽度，默认为0。
 </span></span></span><span class=line><span class=cl><span class=cm>title属性：悬浮图片上的提示文字
-</span></span></span><span class=line><span class=cl><span class=cm>*/</span>
-</span></span></code></pre></div><p>点击图片跳转可以配合a标签使用</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>a</span><span class=p>&gt;&lt;</span><span class=nt>img</span> <span class=na>src</span><span class=o>=</span><span class=s>&#34;&#34;</span> <span class=na>alt</span><span class=o>=</span><span class=s>&#34;&#34;</span><span class=p>&gt;&lt;/</span><span class=nt>a</span><span class=p>&gt;</span>
+</span></span></span><span class=line><span class=cl><span class=cm>*/</span><span class=w>
+</span></span></span></code></pre></div><p>点击图片跳转可以配合a标签使用</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>a</span><span class=p>&gt;&lt;</span><span class=nt>img</span> <span class=na>src</span><span class=o>=</span><span class=s>&#34;&#34;</span> <span class=na>alt</span><span class=o>=</span><span class=s>&#34;&#34;</span><span class=p>&gt;&lt;/</span><span class=nt>a</span><span class=p>&gt;</span>
 </span></span></code></pre></div><h2 id=27列表标签>2.7、列表标签<a hidden class=anchor aria-hidden=true href=#27列表标签>#</a></h2><div class=highlight><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl>  <span class=p>&lt;</span><span class=nt>ul</span> <span class=na>type</span><span class=o>=</span><span class=s>&#34;square&#34;</span><span class=p>&gt;</span>
 </span></span><span class=line><span class=cl>      <span class=p>&lt;</span><span class=nt>li</span><span class=p>&gt;</span>item1<span class=p>&lt;/</span><span class=nt>li</span><span class=p>&gt;</span>
 </span></span><span class=line><span class=cl>      <span class=p>&lt;</span><span class=nt>li</span><span class=p>&gt;</span>item2<span class=p>&lt;/</span><span class=nt>li</span><span class=p>&gt;</span>
@@ -390,8 +390,8 @@ C/S即：Client与Server ，中文意思：客户端与服务器端架构。
 </span></span></span><span class=line><span class=cl><span class=cm>normal：设置字体样式为正体。默认值。 
 </span></span></span><span class=line><span class=cl><span class=cm>italic：设置字体样式为斜体。这是选择字体库中的斜体字。
 </span></span></span><span class=line><span class=cl><span class=cm>oblique：设置字体样式为斜体。人为的使文字倾斜，而不是去使用字体库的斜体字。
-</span></span></span><span class=line><span class=cl><span class=cm>*/</span>
-</span></span></code></pre></div><ul><li>font-weight（字体粗细）</li></ul><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=cm>/*
+</span></span></span><span class=line><span class=cl><span class=cm>*/</span><span class=w>
+</span></span></span></code></pre></div><ul><li>font-weight（字体粗细）</li></ul><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=cm>/*
 </span></span></span><span class=line><span class=cl><span class=cm>属性值：
 </span></span></span><span class=line><span class=cl><span class=cm>normal：设置字体为正常字体。相当于数字值400
 </span></span></span><span class=line><span class=cl><span class=cm>bold：设置字体为粗体。相当于数字值700。
@@ -400,12 +400,12 @@ C/S即：Client与Server ，中文意思：客户端与服务器端架构。
 </span></span></span><span class=line><span class=cl><span class=cm>number：用数字表示字体粗细。从小到大，越来约粗，取值范围：100、200、300、400、500、600、700、800、900。
 </span></span></span><span class=line><span class=cl><span class=cm>注意：
 </span></span></span><span class=line><span class=cl><span class=cm>font-weight的常用值有两个normal和bold，其他的值在浏览器中的支持并不好。
-</span></span></span><span class=line><span class=cl><span class=cm>*/</span>
-</span></span></code></pre></div><ul><li>font-size（字体大小）</li></ul><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=cm>/*
+</span></span></span><span class=line><span class=cl><span class=cm>*/</span><span class=w>
+</span></span></span></code></pre></div><ul><li>font-size（字体大小）</li></ul><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=cm>/*
 </span></span></span><span class=line><span class=cl><span class=cm>font-size的值有很多，有xx-small、x-small、small、medium、large、x-large、xx-large、smaller和larger，也可以设置值为具体的数值加上对应的计算单位来表示字体的大小。字体单位有像素（ px ）、字符（ em，默认1em等于16px，2em等于32px，根据不同浏览器的默认字体大小而决定 ）。
-</span></span></span><span class=line><span class=cl><span class=cm>字体不指定大小时，主流浏览器默认是15像素到16像素。旧版本的谷歌浏览器，字体最小只能设置成12像素，新版已经修复。*/</span>
-</span></span></code></pre></div><ul><li>color（字体颜色）</li></ul><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=c1>// 可以使用color来表示字体的颜色，颜色值最常用的有三种形式，英文单词，十六进制，RGB十进制。</span>
-</span></span></code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl> &lt;style&gt;
+</span></span></span><span class=line><span class=cl><span class=cm>字体不指定大小时，主流浏览器默认是15像素到16像素。旧版本的谷歌浏览器，字体最小只能设置成12像素，新版已经修复。*/</span><span class=w>
+</span></span></span></code></pre></div><ul><li>color（字体颜色）</li></ul><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=c1>// 可以使用color来表示字体的颜色，颜色值最常用的有三种形式，英文单词，十六进制，RGB十进制。</span><span class=w>
+</span></span></span></code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl> &lt;style&gt;
 </span></span><span class=line><span class=cl>        .c1{
 </span></span><span class=line><span class=cl>            color: red;
 </span></span><span class=line><span class=cl>        }
@@ -419,61 +419,61 @@ C/S即：Client与Server ，中文意思：客户端与服务器端架构。
 </span></span></code></pre></div><ul><li>text-align（文本对齐方式）</li></ul><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=cm>/*
 </span></span></span><span class=line><span class=cl><span class=cm>text-align属性可以设置文本内容的水平对齐方式。属性值常用的有
 </span></span></span><span class=line><span class=cl><span class=cm>左对齐left、居中对齐center、右对齐right。justify 实现两端对齐文本效果。
-</span></span></span><span class=line><span class=cl><span class=cm>*/</span>
-</span></span></code></pre></div><ul><li><p>vertical-align</p><p>vertical-align 属性设置元素的垂直对齐方式。</p></li></ul><h3 id=332背景属性>3.3.2、背景属性<a hidden class=anchor aria-hidden=true href=#332背景属性>#</a></h3><ul><li>background-color（背景颜色）</li></ul><p>页面的背景颜色有四种属性值表示，分别是transparent（透明），RGB十进制颜色表示，十六进制颜色表示和颜色单词表示。</p><p>属性使用：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=cm>/*
+</span></span></span><span class=line><span class=cl><span class=cm>*/</span><span class=w>
+</span></span></span></code></pre></div><ul><li><p>vertical-align</p><p>vertical-align 属性设置元素的垂直对齐方式。</p></li></ul><h3 id=332背景属性>3.3.2、背景属性<a hidden class=anchor aria-hidden=true href=#332背景属性>#</a></h3><ul><li>background-color（背景颜色）</li></ul><p>页面的背景颜色有四种属性值表示，分别是transparent（透明），RGB十进制颜色表示，十六进制颜色表示和颜色单词表示。</p><p>属性使用：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=cm>/*
 </span></span></span><span class=line><span class=cl><span class=cm>background-color: transparent;   // 透明 
 </span></span></span><span class=line><span class=cl><span class=cm>background-color: rgb(255,0,0); //  红色背景 
 </span></span></span><span class=line><span class=cl><span class=cm>background-color: #ff0000;  //  红色背景
 </span></span></span><span class=line><span class=cl><span class=cm>background-color: red;    // 红色背景 
-</span></span></span><span class=line><span class=cl><span class=cm>*/</span>
-</span></span></code></pre></div><ul><li>background-image（背景图片）</li></ul><p>background-image可以引入一张图片作为元素的背景图像。默认情况下，background-image放置在元素的左上角，并在垂直和水平方向重复平铺。</p><p>语法：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=c1>// background-image: url(&#39;图片地址&#39;)</span>
-</span></span></code></pre></div><blockquote><p>当同时定义了背景颜色和背景图像时，背景图像覆盖在背景颜色之上。 所以当背景图片没有被加载到，或者不能完全铺满元素时，就会显示背景颜色。</p></blockquote><ul><li>background-repeat（背景平铺方式）</li></ul><p>CSS中，当使用图像作为背景了以后，都是默认把整个页面平铺满的，但是有时候在很多场合下面，页面并不需要这种默认的效果，而可能需要背景图像只显示一次，或者只按照指定方式进行平铺的时候，可以使用background-repeat来进行设置。</p><p>background-repeat专门用于设置背景图像的平铺方式，一般有四个值，默认是repeat（平铺），no-repeat（不平铺），repeat-x（X轴平铺），repeat-y（Y轴平铺）。</p><ul><li>background（背景样式缩写）</li></ul><p>多个不同背景样式属性也是可以同时缩写的，背景样式的缩写属性的顺序是不固定的，可以任意编排。</p><p>语法：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=c1>// background: 背景颜色  背景图片  背景平铺方式  背景定位;</span>
-</span></span></code></pre></div><h3 id=333边框属性>3.3.3、边框属性<a hidden class=anchor aria-hidden=true href=#333边框属性>#</a></h3><ul><li>border-style（边框风格）</li></ul><p>定义边框的风格，值可以有</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=cm>/*
+</span></span></span><span class=line><span class=cl><span class=cm>*/</span><span class=w>
+</span></span></span></code></pre></div><ul><li>background-image（背景图片）</li></ul><p>background-image可以引入一张图片作为元素的背景图像。默认情况下，background-image放置在元素的左上角，并在垂直和水平方向重复平铺。</p><p>语法：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=c1>// background-image: url(&#39;图片地址&#39;)</span><span class=w>
+</span></span></span></code></pre></div><blockquote><p>当同时定义了背景颜色和背景图像时，背景图像覆盖在背景颜色之上。 所以当背景图片没有被加载到，或者不能完全铺满元素时，就会显示背景颜色。</p></blockquote><ul><li>background-repeat（背景平铺方式）</li></ul><p>CSS中，当使用图像作为背景了以后，都是默认把整个页面平铺满的，但是有时候在很多场合下面，页面并不需要这种默认的效果，而可能需要背景图像只显示一次，或者只按照指定方式进行平铺的时候，可以使用background-repeat来进行设置。</p><p>background-repeat专门用于设置背景图像的平铺方式，一般有四个值，默认是repeat（平铺），no-repeat（不平铺），repeat-x（X轴平铺），repeat-y（Y轴平铺）。</p><ul><li>background（背景样式缩写）</li></ul><p>多个不同背景样式属性也是可以同时缩写的，背景样式的缩写属性的顺序是不固定的，可以任意编排。</p><p>语法：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=c1>// background: 背景颜色  背景图片  背景平铺方式  背景定位;</span><span class=w>
+</span></span></span></code></pre></div><h3 id=333边框属性>3.3.3、边框属性<a hidden class=anchor aria-hidden=true href=#333边框属性>#</a></h3><ul><li>border-style（边框风格）</li></ul><p>定义边框的风格，值可以有</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=cm>/*
 </span></span></span><span class=line><span class=cl><span class=cm>none：没有边框，当border的值为none的时候，系统将会忽略[border-color]
 </span></span></span><span class=line><span class=cl><span class=cm>hidden：隐藏边框，低版本浏览器不支持。
 </span></span></span><span class=line><span class=cl><span class=cm>dotted：点状边框。
 </span></span></span><span class=line><span class=cl><span class=cm>dashed：虚线边框。
 </span></span></span><span class=line><span class=cl><span class=cm>solid：实线边框。
 </span></span></span><span class=line><span class=cl><span class=cm>double：双实线边框，两条单线与其间隔的和等于border-width值。
-</span></span></span><span class=line><span class=cl><span class=cm>*/</span>
-</span></span></code></pre></div><p>border-style的值可以缩写的：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=cm>/*
+</span></span></span><span class=line><span class=cl><span class=cm>*/</span><span class=w>
+</span></span></span></code></pre></div><p>border-style的值可以缩写的：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=cm>/*
 </span></span></span><span class=line><span class=cl><span class=cm>只有一个值的时候表示同时控制上下左右的边框风格。
 </span></span></span><span class=line><span class=cl><span class=cm>只有两个值的时候表示分别控制上下、左右的边框风格。
 </span></span></span><span class=line><span class=cl><span class=cm>有三个值的时候表示分别控制上、左右、下的边框风格。
 </span></span></span><span class=line><span class=cl><span class=cm>有四个只的时候表示分别控制上、右、下、左的边框风格。
-</span></span></span><span class=line><span class=cl><span class=cm>*/</span>
-</span></span></code></pre></div><p>border-style还可以单独指定不同方向：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=cm>/*
+</span></span></span><span class=line><span class=cl><span class=cm>*/</span><span class=w>
+</span></span></span></code></pre></div><p>border-style还可以单独指定不同方向：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=cm>/*
 </span></span></span><span class=line><span class=cl><span class=cm>border-top-style		设置上边的边框风格
 </span></span></span><span class=line><span class=cl><span class=cm>border-bottom-style	     设置下边的边框风格
 </span></span></span><span class=line><span class=cl><span class=cm>border-left-style		设置左边的边框风格
 </span></span></span><span class=line><span class=cl><span class=cm>border-right-style		设置右边的边框风格
-</span></span></span><span class=line><span class=cl><span class=cm>*/</span>
-</span></span></code></pre></div><ul><li>border-width（边框宽度）</li></ul><p>使用border-width可以定义边框的厚度，值可以是medium中等，thin薄，thick厚和指定数值的宽度。 同时，border-width也可以进行缩写：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=cm>/*
+</span></span></span><span class=line><span class=cl><span class=cm>*/</span><span class=w>
+</span></span></span></code></pre></div><ul><li>border-width（边框宽度）</li></ul><p>使用border-width可以定义边框的厚度，值可以是medium中等，thin薄，thick厚和指定数值的宽度。 同时，border-width也可以进行缩写：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=cm>/*
 </span></span></span><span class=line><span class=cl><span class=cm>只有一个值的时候表示同时控制上下左右的边框宽度。
 </span></span></span><span class=line><span class=cl><span class=cm>只有两个值的时候表示分别控制上下、左右的边框宽度。
 </span></span></span><span class=line><span class=cl><span class=cm>有三个值的时候表示分别控制上、左右、下的边框宽度。
 </span></span></span><span class=line><span class=cl><span class=cm>有四个只的时候表示分别控制上、右、下、左的边框宽度。
-</span></span></span><span class=line><span class=cl><span class=cm>*/</span>
-</span></span></code></pre></div><p>border-width也可以单独指定不同方向：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=cm>/*
+</span></span></span><span class=line><span class=cl><span class=cm>*/</span><span class=w>
+</span></span></span></code></pre></div><p>border-width也可以单独指定不同方向：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=cm>/*
 </span></span></span><span class=line><span class=cl><span class=cm>border-top-width		设置上边的边框宽度
 </span></span></span><span class=line><span class=cl><span class=cm>border-bottom-width	    设置下边的边框宽度
 </span></span></span><span class=line><span class=cl><span class=cm>border-left-width		设置左边的边框宽度
 </span></span></span><span class=line><span class=cl><span class=cm>border-right-width		设置右边的边框宽度
-</span></span></span><span class=line><span class=cl><span class=cm>*/</span>
-</span></span></code></pre></div><ul><li>border-color（边框颜色）</li></ul><p>定义边框的颜色，值表示的方式可以是十六进制，RGB十进制和单词表示法。</p><p>同上，border-color的缩写：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=cm>/*
+</span></span></span><span class=line><span class=cl><span class=cm>*/</span><span class=w>
+</span></span></span></code></pre></div><ul><li>border-color（边框颜色）</li></ul><p>定义边框的颜色，值表示的方式可以是十六进制，RGB十进制和单词表示法。</p><p>同上，border-color的缩写：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=cm>/*
 </span></span></span><span class=line><span class=cl><span class=cm>只有一个值的时候表示同时控制上下左右的边框颜色。
 </span></span></span><span class=line><span class=cl><span class=cm>只有两个值的时候表示分别控制上下、左右的边框颜色。
 </span></span></span><span class=line><span class=cl><span class=cm>有三个值的时候表示分别控制上、左右、下的边框颜色。
 </span></span></span><span class=line><span class=cl><span class=cm>有四个只的时候表示分别控制上、右、下、左的边框颜色。
-</span></span></span><span class=line><span class=cl><span class=cm>*/</span>
-</span></span></code></pre></div><p>border-color也可以单独指定不同方向：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=c>/*
+</span></span></span><span class=line><span class=cl><span class=cm>*/</span><span class=w>
+</span></span></span></code></pre></div><p>border-color也可以单独指定不同方向：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=c>/*
 </span></span></span><span class=line><span class=cl><span class=c>border-top-color		设置上边的边框颜色
 </span></span></span><span class=line><span class=cl><span class=c>border-bottom-color	设置下边的边框颜色
 </span></span></span><span class=line><span class=cl><span class=c>border-left-color		设置左边的边框颜色
 </span></span></span><span class=line><span class=cl><span class=c>border-right-color		设置右边的边框颜色
 </span></span></span><span class=line><span class=cl><span class=c>*/</span>
-</span></span></code></pre></div><ul><li>边框样式缩写</li></ul><p>还可以把边框风格，边框宽度，边框颜色进行组合在一起，进行缩写：语法：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=c1>// border: 边框宽度 边框样式 边框颜色;</span>
-</span></span></code></pre></div><blockquote><p>注意，border的缩写值可以不按照顺序来进行书写。这样的缩写可以同时控制4个方向的边框样式。</p></blockquote><h1 id=第4章-javascript>第4章 、JavaScript<a hidden class=anchor aria-hidden=true href=#第4章-javascript>#</a></h1><h2 id=41javascript-的历史>4.1、JavaScript 的历史<a hidden class=anchor aria-hidden=true href=#41javascript-的历史>#</a></h2><h3 id=411javascript-的历史>4.1.1、JavaScript 的历史<a hidden class=anchor aria-hidden=true href=#411javascript-的历史>#</a></h3><p>1992年底，美国国家超级电脑应用中心（NCSA）开始开发一个独立的浏览器，叫做Mosaic。这是人类历史上第一个浏览器，从此网页可以在图形界面的窗口浏览。但是该浏览器还没有面向大众的普通用户。</p><p>1994年10月，NCSA的一个主要程序员Jim Clark，成立了一家Netscape通信公司。这家公司的方向，就是在Mosaic的基础上，开发面向普通用户的新一代的浏览器Netscape Navigator。</p><p>1994年12月，Navigator发布了1.0版，市场份额一举超过90%。</p><p>Netscape 公司很快发现，Navigator浏览器需要一种可以嵌入网页的脚本语言，用来控制浏览器行为，因为当时，网速很慢而且上网费很贵，有些操作不宜在服务器端完成。比如，如果用户忘记填写“用户名”，就点了“发送”按钮，到服务器再发现这一点就有点太晚了，最好能在用户发出数据之前，就告诉用户“请填写用户名”。这就需要在网页中嵌入小程序，让浏览器检查每一栏是否都填写了。</p><p>管理层对这种浏览器脚本语言的设想是：功能不需要太强，语法较为简单，容易学习。</p><p>1995年5月，Netscape 公司只用了10天，就设计完成了这种语言的第一版。</p><p>Netscape 公司的这种浏览器脚本语言，最初名字叫做 Mocha，1995年9月改为LiveScript。12月，Netscape公司与Sun公司（Java语言的发明者和所有者）达成协议，后者允许将这种语言叫做JavaScript。这样一来，Netscape公司可以借助Java语言的声势，而Sun公司则将自己的影响力扩展到了浏览器，索引并不是因为JavaScript本身与Java语言有多么深的关系才叫做javaScript。</p><p>1996年3月，Navigator 2.0 浏览器正式内置了 JavaScript 脚本语言，也就是可以直接在浏览器中运行JavaScript 脚本语言。</p><p>JS的作用：简单来说可以处理前端的一些简单的业务逻辑和用户行为、网页事件的触发和监听。</p><h2 id=42js的引入方式>4.2、JS的引入方式<a hidden class=anchor aria-hidden=true href=#42js的引入方式>#</a></h2><div class=highlight><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl>1 直接编写
+</span></span></code></pre></div><ul><li>边框样式缩写</li></ul><p>还可以把边框风格，边框宽度，边框颜色进行组合在一起，进行缩写：语法：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=c1>// border: 边框宽度 边框样式 边框颜色;</span><span class=w>
+</span></span></span></code></pre></div><blockquote><p>注意，border的缩写值可以不按照顺序来进行书写。这样的缩写可以同时控制4个方向的边框样式。</p></blockquote><h1 id=第4章-javascript>第4章 、JavaScript<a hidden class=anchor aria-hidden=true href=#第4章-javascript>#</a></h1><h2 id=41javascript-的历史>4.1、JavaScript 的历史<a hidden class=anchor aria-hidden=true href=#41javascript-的历史>#</a></h2><h3 id=411javascript-的历史>4.1.1、JavaScript 的历史<a hidden class=anchor aria-hidden=true href=#411javascript-的历史>#</a></h3><p>1992年底，美国国家超级电脑应用中心（NCSA）开始开发一个独立的浏览器，叫做Mosaic。这是人类历史上第一个浏览器，从此网页可以在图形界面的窗口浏览。但是该浏览器还没有面向大众的普通用户。</p><p>1994年10月，NCSA的一个主要程序员Jim Clark，成立了一家Netscape通信公司。这家公司的方向，就是在Mosaic的基础上，开发面向普通用户的新一代的浏览器Netscape Navigator。</p><p>1994年12月，Navigator发布了1.0版，市场份额一举超过90%。</p><p>Netscape 公司很快发现，Navigator浏览器需要一种可以嵌入网页的脚本语言，用来控制浏览器行为，因为当时，网速很慢而且上网费很贵，有些操作不宜在服务器端完成。比如，如果用户忘记填写“用户名”，就点了“发送”按钮，到服务器再发现这一点就有点太晚了，最好能在用户发出数据之前，就告诉用户“请填写用户名”。这就需要在网页中嵌入小程序，让浏览器检查每一栏是否都填写了。</p><p>管理层对这种浏览器脚本语言的设想是：功能不需要太强，语法较为简单，容易学习。</p><p>1995年5月，Netscape 公司只用了10天，就设计完成了这种语言的第一版。</p><p>Netscape 公司的这种浏览器脚本语言，最初名字叫做 Mocha，1995年9月改为LiveScript。12月，Netscape公司与Sun公司（Java语言的发明者和所有者）达成协议，后者允许将这种语言叫做JavaScript。这样一来，Netscape公司可以借助Java语言的声势，而Sun公司则将自己的影响力扩展到了浏览器，索引并不是因为JavaScript本身与Java语言有多么深的关系才叫做javaScript。</p><p>1996年3月，Navigator 2.0 浏览器正式内置了 JavaScript 脚本语言，也就是可以直接在浏览器中运行JavaScript 脚本语言。</p><p>JS的作用：简单来说可以处理前端的一些简单的业务逻辑和用户行为、网页事件的触发和监听。</p><h2 id=42js的引入方式>4.2、JS的引入方式<a hidden class=anchor aria-hidden=true href=#42js的引入方式>#</a></h2><div class=highlight><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl>1 直接编写
 </span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>script</span><span class=p>&gt;</span>
 </span></span><span class=line><span class=cl>        <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s1>&#39;hello yuan&#39;</span><span class=p>)</span>
 </span></span><span class=line><span class=cl>    <span class=p>&lt;/</span><span class=nt>script</span><span class=p>&gt;</span>
@@ -1297,8 +1297,8 @@ C/S即：Client与Server ，中文意思：客户端与服务器端架构。
 </span></span></span><span class=line><span class=cl><span class=cm>$(&#34;.class&#34;)  
 </span></span></span><span class=line><span class=cl><span class=cm>$(&#34;element&#34;)  
 </span></span></span><span class=line><span class=cl><span class=cm>$(&#34;.class,p,div&#34;)
-</span></span></span><span class=line><span class=cl><span class=cm>*/</span>
-</span></span></code></pre></div><h2 id=53jquery的事件绑定>5.3、jQuery的事件绑定<a hidden class=anchor aria-hidden=true href=#53jquery的事件绑定>#</a></h2><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=cm>/*
+</span></span></span><span class=line><span class=cl><span class=cm>*/</span><span class=w>
+</span></span></span></code></pre></div><h2 id=53jquery的事件绑定>5.3、jQuery的事件绑定<a hidden class=anchor aria-hidden=true href=#53jquery的事件绑定>#</a></h2><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=cm>/*
 </span></span></span><span class=line><span class=cl><span class=cm>用法:
 </span></span></span><span class=line><span class=cl><span class=cm>	直接通过事件名来进行调用
 </span></span></span><span class=line><span class=cl><span class=cm>  $().事件名(匿名函数)
