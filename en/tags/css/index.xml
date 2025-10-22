@@ -13,35 +13,7 @@
       <pubDate>Fri, 10 Feb 2023 13:41:15 +0800</pubDate>
       
       <guid>https://canw0916.github.io/en/posts/tech/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/</guid>
-      <description>&lt;p&gt;强调：前端所有的内容是作为了解，不需要自己能够写出来！&lt;/p&gt;
-&lt;p&gt;目的：大致看懂网页的页面源码&lt;/p&gt;
-&lt;h1 id=&#34;第1章-web的基本概念&#34;&gt;第1章 、Web的基本概念&lt;/h1&gt;
-&lt;h3 id=&#34;软件开发的架构&#34;&gt;软件开发的架构&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;目前我们了解常见应用程序/软件大致可以分为两种：
-&lt;ul&gt;
-&lt;li&gt;第一种是应用类：qq、微信、网盘、优酷这一类是属于需要安装的桌面应用&lt;/li&gt;
-&lt;li&gt;第二种是web类：比如百度、知乎、博客园等使用浏览器访问就可以直接使用的应用&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;这些应用的本质其实都是两个程序之间的通讯。而这两个分类又对应了两个软件开发的架构：
-&lt;ul&gt;
-&lt;li&gt;C/S架构&lt;/li&gt;
-&lt;li&gt;B/S架构&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;cs架构&#34;&gt;C/S架构&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;C/S即：Client与Server ，中文意思：客户端与服务器端架构。
-&lt;ul&gt;
-&lt;li&gt;我们把提供数据的一方称之为服务器(Server),把访问数据的一方称为客户端(Client)&lt;/li&gt;
-&lt;li&gt;比如：电脑上要看视频就需要装看视频的程序.例如腾讯视频,它就是客户端程序,腾讯公司的机房里运行着腾讯视频的服务器程序,所以它也是C/S构架的程序&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/canw0916/picgo_imgs@main/blog/assets21.png&#34; alt=&#34;21&#34;  /&gt;
-&lt;/p&gt;</description>
+      <description>强调：前端所有的内容是作为了解，不需要自己能够写出来！ 目的：大致看懂网页的页面源码 第1章 、Web的基本概念 软件开发的架构 目前我们了解常见应用</description>
     </item>
     
   </channel>

@@ -22,7 +22,88 @@
       <pubDate>Thu, 09 Nov 2023 20:25:07 +0800</pubDate>
       
       <guid>https://canw0916.github.io/en/posts/tech/markdown%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/</guid>
-      <description>markdown基本用法介绍</description>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Markdown 是一种轻量级的标记语言，可用于在纯文本文档中添加格式化元素。Markdown 由 John Gruber 于 2004 年创建，如今已成为世界上最受欢迎的标记语言之一。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;markdown专注于文字内容；&lt;/li&gt;
+&lt;li&gt;纯文本，易读易写，可以方便地纳入版本控制；&lt;/li&gt;
+&lt;li&gt;语法简单，没有什么学习成本，能轻松在码字的同时做出美观大方的排版。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;常用语法速查表&#34;&gt;常用语法速查表&lt;/h2&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;元素&lt;/th&gt;
+          &lt;th&gt;Markdown 语法&lt;/th&gt;
+          &lt;th&gt;说明&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;https://markdown.com.cn/basic-syntax/headings.html&#34;&gt;标题（Heading）&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;# 标题文字&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;几个#号就是几级标题 #和标题中间要有空格&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;https://markdown.com.cn/basic-syntax/bold.html&#34;&gt;粗体（Bold）&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;**要加粗的文字**&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;前后两个*号&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;https://markdown.com.cn/basic-syntax/italic.html&#34;&gt;斜体（Italic）&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;*要加斜体的文字*&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;前后一个*号&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;https://markdown.com.cn/basic-syntax/blockquotes.html&#34;&gt;引用块（Blockquote）&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;&amp;gt; blockquote&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;一个&amp;gt;号 &amp;gt;和引用内容要有空格&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;https://markdown.com.cn/basic-syntax/ordered-lists.html&#34;&gt;有序列表（Ordered List）&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;1. First item&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;1. 内容  记得空格&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;https://markdown.com.cn/basic-syntax/unordered-lists.html&#34;&gt;无序列表（Unordered List）&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;- First item&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;- 内容  记得空格&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;https://markdown.com.cn/basic-syntax/code.html&#34;&gt;代码（Code）&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;code&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;前后一个`&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;https://markdown.com.cn/basic-syntax/horizontal-rules.html&#34;&gt;分隔线（Horizontal Rule）&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;---&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;https://markdown.com.cn/basic-syntax/links.html&#34;&gt;链接（Link）&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;[title](https://www.example.com)&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;https://markdown.com.cn/extended-syntax/tables.html&#34;&gt;表格（Table）&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;`&lt;/td&gt;
+          &lt;td&gt;Syntax&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;https://markdown.com.cn/extended-syntax/fenced-code-blocks.html&#34;&gt;代码块（Fenced Code Block）&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;```编程语言&lt;/td&gt;
+          &lt;td&gt;前后三个```&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;https://markdown.com.cn/extended-syntax/strikethrough.html&#34;&gt;删除线（Strikethrough）&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;~~The world is flat.~~&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;前后两个~~&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;参考链接&#34;&gt;参考链接&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://markdown.com.cn/cheat-sheet.html&#34;&gt;&amp;ldquo;markdown语法速查表&amp;rdquo;&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
